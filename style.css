@@ -5,17 +5,17 @@
 
 /* === CSS Variables === */
 :root {
-    --primary-bg: #FDFBF6;
+    --primary-bg: #FDF8F5;
     --white: #FFFFFF;
-    --text-dark: #6F645C;
-    --heading-dark: #625850;
-    --accent-gold: #DCCCB0;
-    --accent-gold-dark: #C4B090;
-    --hero-overlay: rgba(95, 85, 75, 0.28);
-    --dark-bg: #B5A898;
-    --dark-bg-lighter: #D0C5B8;
-    --nude-beige: #F4ECE2;
-    --warm-gray: #D5CBC0;
+    --text-dark: #6B5D58;
+    --heading-dark: #5E504B;
+    --accent-gold: #E2C8B8;
+    --accent-gold-dark: #D4B5A2;
+    --hero-overlay: rgba(100, 85, 78, 0.28);
+    --dark-bg: #C9B5A8;
+    --dark-bg-lighter: #DDD0C5;
+    --nude-beige: #F5EAE3;
+    --warm-gray: #E0D2C8;
 
     --font-heading: 'Noto Serif TC', serif;
     --font-body: 'Noto Sans TC', sans-serif;
@@ -634,24 +634,24 @@ section {
 .form-control {
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(100, 80, 70, 0.3);
     border-radius: 0;
     padding: 15px 0;
-    color: var(--white);
+    color: var(--heading-dark);
     font-family: var(--font-body);
     font-size: 15px;
     transition: var(--transition-fast);
 }
 
 .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(100, 80, 70, 0.6);
 }
 
 .form-control:focus {
     background: transparent;
-    border-color: var(--accent-gold);
+    border-color: var(--accent-gold-dark);
     box-shadow: none;
-    color: var(--white);
+    color: var(--heading-dark);
 }
 
 textarea.form-control {
@@ -666,16 +666,17 @@ textarea.form-control {
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--dark-bg);
-    background: var(--accent-gold);
-    border: 1px solid var(--accent-gold);
+    color: var(--white);
+    background: var(--accent-gold-dark);
+    border: 1px solid var(--accent-gold-dark);
     transition: var(--transition-smooth);
     width: 100%;
 }
 
 .btn-submit:hover {
-    background: transparent;
-    color: var(--accent-gold);
+    background: var(--heading-dark);
+    border-color: var(--heading-dark);
+    color: var(--white);
 }
 
 /* === Footer === */
