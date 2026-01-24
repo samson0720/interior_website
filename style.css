@@ -5,17 +5,17 @@
 
 /* === CSS Variables === */
 :root {
-    --primary-bg: #FAF8F5;
+    --primary-bg: #FDFBF6;
     --white: #FFFFFF;
-    --text-dark: #4A4A4A;
-    --heading-dark: #2C2C2C;
-    --accent-gold: #C9A66B;
-    --accent-gold-dark: #A8864B;
-    --hero-overlay: rgba(45, 40, 35, 0.35);
-    --dark-bg: #2C2825;
-    --dark-bg-lighter: #3A3632;
-    --nude-beige: #E8DED3;
-    --warm-gray: #9B9286;
+    --text-dark: #6F645C;
+    --heading-dark: #625850;
+    --accent-gold: #DCCCB0;
+    --accent-gold-dark: #C4B090;
+    --hero-overlay: rgba(95, 85, 75, 0.28);
+    --dark-bg: #B5A898;
+    --dark-bg-lighter: #D0C5B8;
+    --nude-beige: #F4ECE2;
+    --warm-gray: #D5CBC0;
 
     --font-heading: 'Noto Serif TC', serif;
     --font-body: 'Noto Sans TC', sans-serif;
@@ -299,7 +299,7 @@ section {
 
 /* === About Section === */
 .about-section {
-    background: #1a1a1a;
+    background: var(--dark-bg);
     overflow: hidden;
 }
 
@@ -380,7 +380,7 @@ section {
 .designer-section {
     padding: 0;
     overflow: hidden;
-    background: #fff;
+    background: var(--primary-bg);
 }
 
 .designer-photo {
@@ -402,7 +402,7 @@ section {
     flex-direction: column;
     justify-content: center;
     padding: 80px 80px;
-    background: #fff;
+    background: var(--primary-bg);
 }
 
 .designer-quote {
@@ -468,7 +468,7 @@ section {
 
 /* === Projects Section === */
 .projects-section {
-    background: var(--white);
+    background: var(--nude-beige);
     padding: 120px 0;
 }
 
@@ -680,7 +680,7 @@ textarea.form-control {
 
 /* === Footer === */
 .footer {
-    background: var(--heading-dark);
+    background: var(--dark-bg);
     padding: 40px 0;
 }
 
@@ -700,6 +700,14 @@ textarea.form-control {
 .footer-tagline {
     font-size: 12px;
     letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.footer-address {
+    font-size: 12px;
+    letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
     margin-top: 5px;
     margin-bottom: 0;
@@ -865,4 +873,45 @@ textarea.form-control {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-gold-dark);
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+}
+
+.custom-map-control {
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid var(--accent-gold);
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.custom-map-control:hover {
+    background-color: var(--accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(199, 168, 77, 0.3);
+}
+
+.custom-map-control-text {
+    color: var(--accent-gold);
+    font-family: inherit;
+    /* Inherit web font */
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+    padding-left: 15px;
+    padding-right: 15px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.custom-map-control:hover .custom-map-control-text {
+    color: #000;
 }

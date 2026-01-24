@@ -359,3 +359,54 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+// === Google Maps Initialization ===
+window.initMap = function () {
+    // Coordinates for 324桃園市平鎮區南平路50號11樓
+    // 帛瑀室內裝修設計股份有限公司 - Exact coordinates from Google Maps
+    const location = { lat: 24.919720259547983, lng: 121.20975747116424 };
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 17, // Zoomed in closer for specific building location
+        center: location,
+        gestureHandling: "cooperative", // Cooperative gesture handling
+        mapTypeControl: false, // Hide default map type control to make room
+        streetViewControl: false,
+    });
+
+    // Create the DIV to hold the control and call the constructor passing in this DIV
+    const centerControlDiv = document.createElement("div");
+
+    // Custom Control UI
+    const controlUI = document.createElement("div");
+    controlUI.className = "custom-map-control";
+    controlUI.title = "點擊以在 Google 地圖中查看";
+    centerControlDiv.appendChild(controlUI);
+
+    // Custom Control Text
+    const controlText = document.createElement("div");
+    controlText.className = "custom-map-control-text";
+    controlText.innerHTML = "顯示詳細地圖";
+    controlUI.appendChild(controlText);
+
+    // Setup the click event listeners
+    controlUI.addEventListener("click", () => {
+        window.open("https://www.google.com/maps/search/?api=1&query=帛瑀室內裝修設計股份有限公司", "_blank");
+    });
+
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(centerControlDiv);
+
+    const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "帛瑀室內裝修設計股份有限公司",
+    });
+
+    const infoWindow = new google.maps.InfoWindow({
+        content: '<div style="color: #333; padding: 10px; font-family: sans-serif;"><strong>帛瑀室內裝修設計股份有限公司</strong><br>324桃園市平鎮區南平路50號11樓</div>'
+    });
+
+    marker.addListener("click", () => {
+        infoWindow.open(map, marker);
+    });
+};
