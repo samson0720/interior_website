@@ -4,349 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="帛瑀室內設計 - 每一個案子都是一次夢想的實現，讓客戶的夢境走進最溫暖的家">
-    <title>帛瑀 | 頂級室內設計</title>
+    <meta name="description" content="帛瑪室內設計 (Silky Jade) - Designed with warmth. Crafted with care.">
+    <title>帛瑪室內設計 | Silky Jade Interior Design</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
         rel="stylesheet">
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Custom CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">帛瑀</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">ABOUT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">PROJECTS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#process">PROCESS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">CONTACT</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+    <!-- Header & Navbar -->
+    <header>
+        <!-- Left: Logo -->
+        <a href="/" class="logo-link">
+            <img src="home_png/HOME_LOGO.png" alt="帛瑪 Silky Jade LOGO">
+        </a>
+
+        <!-- Center: Nav (純圖片，無文字) -->
+        <nav class="main-nav">
+            <a href="index.html"><img src="home_png/HOME_HOME-t.png" alt="HOME"></a>
+            <a href="about.html"><img src="home_png/HOME_ABOUT-t.png" alt="ABOUT"></a>
+            <a href="projects.html"><img src="home_png/HOME_PROJECTS-t.png" alt="PROJECTS"></a>
+            <a href="contact.html"><img src="home_png/HOME_CONTACT-t.png" alt="CONTACT"></a>
+            <a href="services.html"><img src="home_png/HOME_SERVICES-t.png" alt="SERVICES"></a>
+        </nav>
+
+        <!-- Right: IG Icon -->
+        <a href="https://www.instagram.com/" target="_blank" class="ig-link" aria-label="Instagram">
+            <img src="home_png/HOME_IGICON.png" alt="Instagram">
+        </a>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-        <div class="hero-slideshow">
-            <div class="hero-slide hero-slide-1 active"></div>
-            <div class="hero-slide hero-slide-2"></div>
+    <section class="hero">
+        <div class="hero-image-wrapper">
+            <img src="home_png/HOME.png" alt="Silky Jade Interior Design Context" class="hero-bg-img">
         </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">讓夢想走進溫暖的家</h1>
-            <p class="hero-subtitle">每個點子都可以發光，每個故事都會精彩絕倫</p>
-            <a href="#projects" class="btn btn-hero">探索作品 <i class="fas fa-arrow-right ms-2"></i></a>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 about-image-col">
-                    <div class="about-image-wrapper">
-                        <img src="IMG_1016.JPG" alt="關於我們" class="about-image">
-                        <div class="about-image-accent"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6 about-text-col">
-                    <div class="about-content" data-reveal>
-                        <span class="section-label">ABOUT US</span>
-                        <h2 class="section-title">訂製專屬<br>美學空間</h2>
-                        <p class="about-description">
-                            每一個案子都是一次夢想的實現，我們讓客戶的夢境走進最溫暖的家。
-                        </p>
-                        <p class="about-description">
-                            美感與生活並重，設計不只是好看，更要舒服、貼心、動人。<br>
-                            這裡，每個點子都可以發光，每個故事都會精彩絕倫。
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <!-- Text Elements (Absolutely Positioned Images) -->
+        <div class="hero-slogan-center">
+            <img src="home_png/HOME_Designed with-t.png" alt="Designed with warmth. Crafted with care.">
         </div>
-    </section>
 
-    <!-- Designer Section -->
-    <section class="designer-section" id="designer">
-        <div class="container-fluid">
-            <div class="row g-0 align-items-stretch">
-                <div class="col-lg-6">
-                    <div class="designer-photo">
-                        <img src="introductor.jpg" alt="設計總監 Aria Tseng">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="designer-info">
-                        <div class="designer-quote">
-                            「 概念及靈魂是無法被複製的 」
-                        </div>
-                        <div class="designer-header">
-                            <span class="designer-label">DESIGN DIRECTOR</span>
-                            <h2 class="designer-title">設計總監 / Aria Tseng</h2>
-                        </div>
-                        <div class="designer-bio">
-                            <p>專業，是我們的底色。</p>
-                            <p>用紮實的室內裝修工程實力，把每個夢想家落地成真。從極簡到華麗，從現代到復古，任何想像都值得一探究竟。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-text-bottom-left">
+            <img src="home_png/HOME_silkyjade-t.png" alt="Silky Jade Interior Design Co. Ltd.">
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section class="projects-section" id="projects">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">PORTFOLIO</span>
-                <h2 class="section-title">SELECTED WORKS</h2>
-            </div>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <div class="col">
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80"
-                                alt="現代極簡宅邸" class="project-image">
-                            <div class="project-overlay">
-                                <h3 class="project-title">林口亞昕昕上城</h3>
-                                <span class="project-category">Residential</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80"
-                                alt="奢華私人會所" class="project-image">
-                            <div class="project-overlay">
-                                <h3 class="project-title">桃園京懋睿和</h3>
-                                <span class="project-category">Residential</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
-                                alt="都會精品公寓" class="project-image">
-                            <div class="project-overlay">
-                                <h3 class="project-title">平鎮雲鑽</h3>
-                                <span class="project-category">Residential</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=600&q=80"
-                                alt="山景別墅" class="project-image">
-                            <div class="project-overlay">
-                                <h3 class="project-title">山景別墅</h3>
-                                <span class="project-category">Residential</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80"
-                                alt="藝術畫廊空間" class="project-image">
-                            <div class="project-overlay">
-                                <h3 class="project-title">藝術畫廊空間</h3>
-                                <span class="project-category">Commercial</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="project-card">
-                        <div class="project-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=600&q=80"
-                                alt="頂層豪宅" class="project-image">
-                            <div class="project-overlay">
-                                <h3 class="project-title">頂層豪宅</h3>
-                                <span class="project-category">Residential</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process-section" id="process">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-label">HOW WE WORK</span>
-                <h2 class="section-title">設計流程</h2>
-            </div>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <div class="col">
-                    <div class="process-card">
-                        <div class="process-number">01</div>
-                        <h3 class="process-title">初步接洽</h3>
-                        <p class="process-description">了解您的需求與預算，建立初步溝通與信任基礎。</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="process-card">
-                        <div class="process-number">02</div>
-                        <h3 class="process-title">丈量提案</h3>
-                        <p class="process-description">實地丈量空間，進行分析並提出概念性配置方案。</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="process-card">
-                        <div class="process-number">03</div>
-                        <h3 class="process-title">平面配置規劃</h3>
-                        <p class="process-description">詳細規劃平面圖與動線設計，確保空間最佳化利用。</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="process-card">
-                        <div class="process-number">04</div>
-                        <h3 class="process-title">設計合約</h3>
-                        <p class="process-description">簽訂設計合約，明確里程碑與付款方式。</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="process-card">
-                        <div class="process-number">05</div>
-                        <h3 class="process-title">繪製圖面</h3>
-                        <p class="process-description">燈光配置、材質選擇、3D效果圖繪製，完整呈現設計願景。</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="process-card">
-                        <div class="process-number">06</div>
-                        <h3 class="process-title">工程施作</h3>
-                        <p class="process-description">專業施工團隊執行，全程監督確保品質達到最高標準。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="contact-info">
-                        <span class="section-label section-label-light">GET IN TOUCH</span>
-                        <h2 class="section-title section-title-light">聯繫我們</h2>
-                        <p class="contact-description">
-                            讓我們一起打造您的夢想空間。無論是全新設計或空間改造，我們都期待與您交流。
-                        </p>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>324桃園市平鎮區南平路50號11樓</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+886 2 2345 6789</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>info@boyu-design.tw</span>
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <form class="contact-form" id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="name" placeholder="您的姓名" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" id="phone" placeholder="聯絡電話" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="電子信箱">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="message" rows="5" placeholder="請描述您的需求..."
-                                required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-submit">
-                            發送訊息 <i class="fas fa-paper-plane ms-2"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <div class="hero-text-bottom-right">
+            <img src="home_png/HOME_t-t.png" alt="溫度設計 | 細節落地">
         </div>
     </section>
 
     <!-- Footer -->
-    <div id="map"></div>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-logo">帛瑀</span>
-                    <p class="footer-tagline">讓夢想走進溫暖的家</p>
-                    <p class="footer-address">324桃園市平鎮區南平路50號11樓</p>
-                </div>
-                <div class="footer-copyright">
-                    <p>&copy; 2026 帛瑀. All Rights Reserved.</p>
-                </div>
-            </div>
+    <footer>
+        <div class="footer-content">
+            <img src="home_png/HOME_@2026-t.png" alt="© 2026 SILKY JADE. ALL RIGHTS RESERVED.">
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw-R6jNY-JsJ9cR61QXnN6y1eOKD6UX2U&callback=initMap"></script>
+    <!-- JavaScript -->
+    <script src="main.js"></script>
 </body>
 
 </html>

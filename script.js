@@ -1,6 +1,7 @@
 /**
- * 帛瑀 - Luxury Interior Design Website
+ * 帛瑀 - Silky Jade Interior Design Website
  * JavaScript Functionality
+ * Based on PDF Design
  */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -26,47 +27,34 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleNavbarScroll);
 
 
-    // === Hero Slideshow ===
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    let currentSlide = 0;
-    const slideInterval = 5000; // 5 seconds
-
-    function nextSlide() {
-        heroSlides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % heroSlides.length;
-        heroSlides[currentSlide].classList.add('active');
-    }
-
-    if (heroSlides.length > 1) {
-        setInterval(nextSlide, slideInterval);
-    }
-
-
     // === Smooth Scroll for Navigation Links ===
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .footer-nav a');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
-            e.preventDefault();
+            const href = this.getAttribute('href');
 
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
 
-            if (targetSection) {
-                const navbarHeight = navbar.offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
+                const targetSection = document.querySelector(href);
 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                if (targetSection) {
+                    const navbarHeight = navbar.offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navbarHeight;
 
-                // Close mobile menu if open
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                    if (bsCollapse) {
-                        bsCollapse.hide();
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        }
                     }
                 }
             }
@@ -99,29 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', updateActiveNavLink);
 
 
-    // === Hero Button Smooth Scroll ===
-    const heroButton = document.querySelector('.btn-hero');
-
-    if (heroButton) {
-        heroButton.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-
-            if (targetSection) {
-                const navbarHeight = navbar.offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    }
-
-
     // === Contact Form Handling ===
     const contactForm = document.getElementById('contactForm');
 
@@ -130,24 +95,20 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
 
             // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
 
             // Validate required fields
-            if (!formData.name || !formData.phone || !formData.message) {
-                showNotification('請填寫所有必填欄位', 'error');
+            if (!data.name || !data.phone) {
+                showNotification('請填寫姓名和聯絡電話', 'error');
                 return;
             }
 
             // Simulate form submission
-            const submitBtn = contactForm.querySelector('.btn-submit');
+            const submitBtn = contactForm.querySelector('.btn-submit-new');
             const originalText = submitBtn.innerHTML;
 
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 發送中...';
+            submitBtn.innerHTML = '發送中...';
             submitBtn.disabled = true;
 
             // Simulate API call
@@ -183,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
             bottom: 30px;
             right: 30px;
             padding: 20px 30px;
-            background: ${type === 'success' ? '#C5A47E' : '#e74c3c'};
+            background: ${type === 'success' ? '#8B7355' : '#e74c3c'};
             color: white;
             font-family: 'Noto Sans TC', sans-serif;
             font-size: 14px;
@@ -196,21 +157,24 @@ document.addEventListener('DOMContentLoaded', function () {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         `;
 
-        // Add animation keyframes
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideInRight {
-                from {
-                    transform: translateX(100%);
-                    opacity: 0;
+        // Add animation keyframes if not exists
+        if (!document.querySelector('#notification-styles')) {
+            const style = document.createElement('style');
+            style.id = 'notification-styles';
+            style.textContent = `
+                @keyframes slideInRight {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
                 }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-        `;
-        document.head.appendChild(style);
+            `;
+            document.head.appendChild(style);
+        }
 
         // Add to DOM
         document.body.appendChild(notification);
@@ -240,101 +204,89 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // === LeBlanc-Style Scroll Reveal Animations ===
+    // === Scroll Reveal Animations ===
     const revealOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -80px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
-            } else {
-                entry.target.classList.remove('revealed');
             }
         });
     }, revealOptions);
 
     // Select all elements that should animate on scroll
     const revealElements = document.querySelectorAll(
-        '.about-content, .about-image-wrapper, .project-card, .process-card, ' +
-        '.contact-form, .contact-info, .designer-info, .designer-photo, ' +
-        '.section-header, [data-reveal]'
+        '.about-concept-content, .about-images-grid, .hele-content, .hele-image-wrapper, ' +
+        '.designer-card, .project-item, .project-grid-item, .project-detail-content, ' +
+        '.service-step, .contact-form-new, .information-section, .section-header'
     );
 
-    // Apply initial hidden state and staggered delays
+    // Apply initial hidden state
     revealElements.forEach((el, index) => {
         el.classList.add('reveal-element');
-        // Add staggered delay for grouped elements
-        const delay = (index % 4) * 0.1;
+        const delay = (index % 4) * 0.08;
         el.style.transitionDelay = `${delay}s`;
         revealObserver.observe(el);
     });
 
     // Add reveal animation styles
-    const revealStyles = document.createElement('style');
-    revealStyles.textContent = `
-        .reveal-element {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .reveal-element.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Smooth hover effects for cards */
-        .project-card {
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                        box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-8px);
-        }
-        
-        .project-card img {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .project-card:hover img {
-            transform: scale(1.05);
-        }
-    `;
-    document.head.appendChild(revealStyles);
+    if (!document.querySelector('#reveal-styles')) {
+        const revealStyles = document.createElement('style');
+        revealStyles.id = 'reveal-styles';
+        revealStyles.textContent = `
+            .reveal-element {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), 
+                            transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .reveal-element.revealed {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        `;
+        document.head.appendChild(revealStyles);
+    }
 
 
-    // === Project Card Hover Effect Enhancement ===
-    const projectCards = document.querySelectorAll('.project-card');
+    // === About Page: Scroll Fade-In Animations (IntersectionObserver) ===
+    const fadeUpEls = document.querySelectorAll('.fade-in-up');
 
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function () {
+    if (fadeUpEls.length > 0) {
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    fadeObserver.unobserve(entry.target); // 觸發一次後不再觀察
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        fadeUpEls.forEach(el => fadeObserver.observe(el));
+    }
+
+
+    // === Project Item Hover Effects ===
+    const projectItems = document.querySelectorAll('.project-item, .project-grid-item');
+
+    projectItems.forEach(item => {
+        item.addEventListener('mouseenter', function () {
             this.style.cursor = 'pointer';
         });
 
-        card.addEventListener('click', function () {
+        item.addEventListener('click', function () {
             // Placeholder for project detail view
-            const projectTitle = this.querySelector('.project-title').textContent;
-            console.log(`Viewing project: ${projectTitle}`);
-            // In a real implementation, this would navigate to a project detail page
+            console.log('Project clicked');
         });
     });
-
-
-    // === Parallax Effect for Hero Section ===
-    function handleParallax() {
-        const heroSection = document.querySelector('.hero-section');
-        if (heroSection && window.innerWidth > 991) {
-            const scrolled = window.scrollY;
-            heroSection.style.backgroundPositionY = `${scrolled * 0.5}px`;
-        }
-    }
-
-    window.addEventListener('scroll', handleParallax);
 
 
     // === Mobile Menu Close on Outside Click ===
@@ -353,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // === Preloader (Optional Enhancement) ===
+    // === Preloader ===
     window.addEventListener('load', function () {
         document.body.classList.add('loaded');
     });
@@ -362,34 +314,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // === Google Maps Initialization ===
 window.initMap = function () {
-    // Coordinates for 324桃園市平鎮區南平路50號11樓
-    // 帛瑀室內裝修設計股份有限公司 - Exact coordinates from Google Maps
+    // Coordinates for 桃園市平鎮區南平路50號11樓
     const location = { lat: 24.919720259547983, lng: 121.20975747116424 };
 
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 17, // Zoomed in closer for specific building location
+        zoom: 17,
         center: location,
-        gestureHandling: "cooperative", // Cooperative gesture handling
-        mapTypeControl: false, // Hide default map type control to make room
+        gestureHandling: "cooperative",
+        mapTypeControl: false,
         streetViewControl: false,
+        styles: [
+            {
+                "featureType": "all",
+                "elementType": "geometry",
+                "stylers": [{ "saturation": -20 }]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [{ "color": "#c9d1d9" }]
+            }
+        ]
     });
 
-    // Create the DIV to hold the control and call the constructor passing in this DIV
+    // Create custom control for opening in Google Maps
     const centerControlDiv = document.createElement("div");
 
-    // Custom Control UI
     const controlUI = document.createElement("div");
     controlUI.className = "custom-map-control";
     controlUI.title = "點擊以在 Google 地圖中查看";
     centerControlDiv.appendChild(controlUI);
 
-    // Custom Control Text
     const controlText = document.createElement("div");
     controlText.className = "custom-map-control-text";
     controlText.innerHTML = "顯示詳細地圖";
     controlUI.appendChild(controlText);
 
-    // Setup the click event listeners
     controlUI.addEventListener("click", () => {
         window.open("https://www.google.com/maps/search/?api=1&query=帛瑀室內裝修設計股份有限公司", "_blank");
     });
@@ -403,7 +363,7 @@ window.initMap = function () {
     });
 
     const infoWindow = new google.maps.InfoWindow({
-        content: '<div style="color: #333; padding: 10px; font-family: sans-serif;"><strong>帛瑀室內裝修設計股份有限公司</strong><br>324桃園市平鎮區南平路50號11樓</div>'
+        content: '<div style="color: #4A3F35; padding: 10px; font-family: sans-serif;"><strong>帛瑀室內裝修設計股份有限公司</strong><br>桃園市平鎮區南平路50號11樓</div>'
     });
 
     marker.addListener("click", () => {
