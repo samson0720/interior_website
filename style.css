@@ -325,16 +325,14 @@ body.about-page {
     transform: translateY(0);
 }
 
-/* Fallback: if JS hasn't loaded in 3s, show everything */
-@keyframes forceShow {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* 純 opacity 淡入（無位移），用於文字圖片 */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.fade-in-up {
-    animation: forceShow 0s 3s forwards;
+.fade-in.is-visible {
+    opacity: 1;
 }
 
 /* ---------- About Global ---------- */
@@ -758,21 +756,21 @@ body.about-page {
     background-size: cover;
     background-position: center;
     background-color: #876752;
-    padding: 30px 8%;
+    padding: 24px 4%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .footer-left img {
-    height: 28px;
+    height: 40px;
     width: auto;
 }
 
 .footer-nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 90px;
 }
 
 .footer-nav a {
@@ -783,8 +781,12 @@ body.about-page {
 }
 
 .footer-nav a img {
-    height: 9px;
+    height: 10px;
     width: auto;
+}
+
+.footer-nav a:nth-child(3) img {
+    height: 13px;
 }
 
 .footer-nav a:hover {
@@ -792,8 +794,389 @@ body.about-page {
 }
 
 .footer-right img {
-    height: 18px;
+    height: 26px;
     width: auto;
+    margin-top: 6px;
+    margin-left: 15px;
+}
+
+
+/* =============================================
+   Projects Page
+   ============================================= */
+
+.projects-main {
+    padding-top: 95px;
+}
+
+/* 每個區塊之間的留白（露出米色底色） */
+.projects-main > * {
+    margin-bottom: 75px;
+}
+.projects-main > *:last-child {
+    margin-bottom: 0;
+}
+
+body.projects-page .site-footer {
+    margin-top: 160px;
+}
+
+/* 全寬橫幅圖：image-1 / image-5 / image-8 */
+.project-hero,
+.project-photo-full {
+    position: relative;
+    width: 100%;
+}
+
+.project-hero img.project-photo,
+.project-photo-full img.project-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 標題 caption：左下角疊圖 */
+.project-caption {
+    position: absolute;
+    bottom: 36px;
+    left: 48px;
+}
+
+.project-caption img {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+/* 三欄直式細節圖 */
+.project-row-3 {
+    display: flex;
+    width: 100%;
+    gap: 0;
+}
+
+.project-row-3 img {
+    width: 33.333%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* 兩欄直式細節圖 */
+.project-row-2 {
+    display: flex;
+    width: 100%;
+    gap: 0;
+}
+
+.project-row-2 img {
+    width: 50%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* 規格 + 描述文字區 */
+.project-info {
+    display: flex;
+    gap: 100px;
+    padding: 80px 10%;
+    align-items: flex-start;
+    background-color: var(--bg-color);
+}
+
+.project-specs img {
+    width: 260px;
+    height: auto;
+    display: block;
+}
+
+.project-desc {
+    flex: 1;
+}
+
+.project-desc img {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    display: block;
+}
+
+/* =============================================
+   Project Detail Page
+   ============================================= */
+
+.project-detail-main {
+    padding-top: 120px;
+}
+
+.project-detail-full {
+    line-height: 0;
+}
+
+.project-detail-full img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-detail-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 70px 8%;
+}
+
+.project-detail-row-3 img:first-child {
+    transform: translateX(-10px);
+}
+
+.project-detail-row-3 img:last-child {
+    transform: translateX(10px);
+}
+
+.project-detail-row-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 90px 9%;
+}
+
+.project-detail-row-2 img:first-child {
+    transform: translateX(-22px);
+}
+
+.project-detail-row-2 img:last-child {
+    transform: translateX(22px);
+}
+
+.project-detail-row-3 img,
+.project-detail-row-2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.project-detail-info {
+    background-color: #DDD2CA;
+    padding: 103px 6% 137px;
+}
+
+.project-detail-nav-btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 48px;
+}
+
+.project-nav-btn {
+    display: block;
+    line-height: 0;
+    transition: opacity 0.3s;
+    transform: translate(30px, -45px);
+}
+
+.project-nav-btn:hover {
+    opacity: 0.7;
+}
+
+.project-nav-btn img {
+    height: 22px;
+    width: auto;
+    display: block;
+}
+
+.project-detail-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 5%;
+}
+
+.project-detail-title {
+    width: 14%;
+    flex-shrink: 0;
+    transform: translateX(30px);
+}
+
+.project-detail-title img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-detail-specs {
+    width: 16%;
+    flex-shrink: 0;
+    transform: translate(60px, -14px);
+}
+
+.project-detail-specs img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-detail-desc {
+    flex: 1;
+}
+
+.project-detail-desc img {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    display: block;
+    transform: translate(55px, -19px);
+}
+
+/* Hover effect on projects page clickable photos */
+.project-photo-full a {
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.project-photo-full a img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-photo-full a:hover img {
+    transform: scale(1.02);
+}
+
+
+/* =============================================
+   Services Page
+   ============================================= */
+
+body.services-page {
+    background-color: #F0EBE7;
+}
+
+.services-main {
+    padding-top: 80px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+.services-pdf {
+    width: 100%;
+    flex: 1;
+    border: none;
+    display: block;
+}
+
+.services-title-wrap {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.services-title-img {
+    display: block;
+    width: 16%;
+    min-width: 160px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Timeline */
+.services-timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.services-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #9E8575;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.timeline-row {
+    display: grid;
+    grid-template-columns: 1fr 50px 1fr;
+    align-items: flex-start;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.timeline-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #9E8575;
+}
+
+.timeline-left {
+    padding-right: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.timeline-right {
+    padding-left: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.services-illustration {
+    max-width: 220px;
+    width: 70%;
+    height: auto;
+    display: block;
+}
+
+.services-floorplan {
+    max-width: 280px;
+    width: 85%;
+}
+
+.step-num-img {
+    height: 20px;
+    width: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.step-title-img {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.step-subtitle-img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.step-desc-img {
+    max-width: 380px;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 

@@ -64,21 +64,29 @@ function initHeroInteraction() {
 /**
  * Scroll Fade-In Animations (About Page)
  * Observes .fade-in-up elements and adds .is-visible when in view.
+ * Waits for window.load so images have real dimensions before observing.
  */
 function initFadeInAnimations() {
-    const fadeEls = document.querySelectorAll('.fade-in-up');
+    const fadeEls = document.querySelectorAll('.fade-in-up, .fade-in');
     if (!fadeEls.length) return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
+            } else {
+                entry.target.classList.remove('is-visible');
             }
         });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-    fadeEls.forEach(el => observer.observe(el));
+    const startObserving = () => fadeEls.forEach(el => observer.observe(el));
+
+    if (document.readyState === 'complete') {
+        startObserving();
+    } else {
+        window.addEventListener('load', startObserving);
+    }
 }
 
 /**
