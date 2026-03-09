@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroInteraction();
     initMobileMenu();
     initFadeInAnimations();
+    initMultiSelects();
     console.log('Silky Jade Scripts Loaded.');
 });
 
@@ -87,6 +88,52 @@ function initFadeInAnimations() {
     } else {
         window.addEventListener('load', startObserving);
     }
+}
+
+/**
+ * Multi-select Dropdowns
+ */
+function initMultiSelects() {
+    document.querySelectorAll('.sv-multiselect-wrap').forEach(wrap => {
+        const isSingle = wrap.dataset.single === 'true';
+        const trigger = wrap.querySelector('.sv-multiselect-trigger');
+        const textEl = wrap.querySelector('.sv-multiselect-text');
+        const hiddenInput = wrap.querySelector('input[type="hidden"]');
+
+        trigger.addEventListener('click', e => {
+            e.stopPropagation();
+            const isOpen = wrap.classList.contains('ms-open');
+            document.querySelectorAll('.sv-multiselect-wrap.ms-open').forEach(w => w.classList.remove('ms-open'));
+            if (!isOpen) wrap.classList.add('ms-open');
+        });
+
+        if (isSingle) {
+            wrap.querySelectorAll('.sv-ms-single').forEach(opt => {
+                opt.addEventListener('click', e => {
+                    e.stopPropagation();
+                    wrap.querySelectorAll('.sv-ms-single').forEach(o => o.classList.remove('is-selected'));
+                    opt.classList.add('is-selected');
+                    textEl.textContent = opt.dataset.value;
+                    if (hiddenInput) hiddenInput.value = opt.dataset.value;
+                    wrap.classList.remove('ms-open');
+                });
+            });
+        } else {
+            const checkboxes = wrap.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', () => {
+                    const selected = [...checkboxes].filter(c => c.checked).map(c => c.value);
+                    textEl.textContent = selected.join('、');
+                    if (hiddenInput) hiddenInput.value = selected.join('、');
+                });
+            });
+            wrap.querySelector('.sv-multiselect-dropdown').addEventListener('click', e => e.stopPropagation());
+        }
+    });
+
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.sv-multiselect-wrap.ms-open').forEach(w => w.classList.remove('ms-open'));
+    });
 }
 
 /**
