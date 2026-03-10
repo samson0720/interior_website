@@ -1997,62 +1997,89 @@ body.contact-page .site-footer {
    ============================================= */
 @media (max-width: 768px) {
 
-    /* 防止任何頁面橫向溢出 */
+    /* 防止橫向溢出 */
     html, body {
         overflow-x: hidden;
         max-width: 100%;
     }
 
-    /* ── HOME：導覽列覆蓋層改深色，白色圖示才看得到 ── */
+    /* ══════════════════════════════════════════
+       HOME：導覽列深色背景（白色圖示才看得到）
+    ══════════════════════════════════════════ */
     body.home-page .main-nav {
         background: rgba(30, 25, 22, 0.96);
     }
 
-    /* ── ABOUT：概念文字區（絕對定位轉正常流） ── */
+    /* ══════════════════════════════════════════
+       ABOUT：Section 1 — OUR CONCEPT
+    ══════════════════════════════════════════ */
+    .concept-section {
+        padding: 0 !important;
+        overflow: hidden;
+    }
+
     .concept-section .row {
-        flex-direction: column;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        gap: 0 !important;
     }
 
     .concept-left {
         width: 100% !important;
-        padding-top: 80px !important;
-        padding-left: 5% !important;
-        padding-right: 5% !important;
-    }
-
-    .concept-right {
-        width: 100% !important;
-    }
-
-    .concept-table-img {
-        width: 100% !important;
-        height: auto !important;
+        padding-top: 100px !important;
+        padding-left: 6% !important;
+        padding-right: 6% !important;
     }
 
     .concept-img-wrapper {
-        width: 60% !important;
+        width: 55% !important;
         height: auto !important;
+    }
+
+    .concept-img-wrapper::before {
+        display: none;
     }
 
     .concept-text {
         position: static !important;
-        margin-top: 30px;
+        left: auto !important;
+        top: auto !important;
+        margin-top: 28px;
     }
 
     .concept-text .section-title-img {
-        width: 120px !important;
+        width: 130px !important;
         height: auto !important;
+        margin-bottom: 16px;
     }
 
     .concept-text .section-text-img {
         width: 100% !important;
-        margin-top: 20px !important;
+        max-width: 100% !important;
+        margin-top: 16px !important;
     }
 
-    /* ── ABOUT：touching section ── */
+    .concept-right {
+        width: 100% !important;
+        margin-top: 32px !important;
+    }
+
+    .concept-table-img {
+        width: 100% !important;
+        height: 280px !important;
+        object-fit: cover;
+    }
+
+    /* ══════════════════════════════════════════
+       ABOUT：Section 2 — TOUCHING
+    ══════════════════════════════════════════ */
     .touching-section {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
+        padding: 40px 6% 40px !important;
+    }
+
+    .touching-section .row {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
     }
 
     .touching-left {
@@ -2063,169 +2090,274 @@ body.contact-page .site-footer {
         width: 100% !important;
     }
 
+    .touching-color-block {
+        display: none;
+    }
+
     .touching-arch-img {
         width: 100% !important;
-        height: auto !important;
+        height: 320px !important;
+        object-fit: cover;
     }
 
     .touching-right {
         width: 100% !important;
-    }
-
-    .comfortable-title-img {
-        margin-left: 0 !important;
-        margin-top: 20px !important;
-        width: 55% !important;
+        margin-top: 28px !important;
     }
 
     .touching-content-wrapper {
         width: 100% !important;
         margin-left: 0 !important;
+        margin-top: 0 !important;
     }
 
     .touching-plant-img {
-        width: 45% !important;
+        width: 40% !important;
         height: auto !important;
         margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 20px !important;
     }
 
     .touching-content-wrapper .section-text-img {
         width: 100% !important;
+        max-width: 100% !important;
         margin-left: 0 !important;
     }
 
-    /* ── ABOUT：HERE section ── */
+    .comfortable-title-img {
+        width: 60% !important;
+        margin-left: 0 !important;
+        margin-top: 20px !important;
+    }
+
+    /* ══════════════════════════════════════════
+       ABOUT：Section 3 — HERE
+    ══════════════════════════════════════════ */
+    .here-section {
+        padding: 40px 0 40px 0 !important;
+        overflow: hidden;
+    }
+
     .here-section .row {
-        flex-direction: column;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
     }
 
     .here-left {
         width: 100% !important;
-        padding-left: 5% !important;
-    }
-
-    .here-right {
-        width: 100% !important;
+        padding-left: 6% !important;
+        padding-top: 0 !important;
     }
 
     .here-text {
         position: static !important;
-        margin-top: 20px;
+        left: auto !important;
+        top: auto !important;
+        margin-top: 0 !important;
+    }
+
+    .here-title-img {
+        position: static !important;
+        top: auto !important;
+        width: 70px !important;
+        margin-bottom: 16px;
     }
 
     .here-text .section-text-img {
         position: static !important;
-        width: 80% !important;
+        top: auto !important;
+        width: 85% !important;
+    }
+
+    .here-right {
+        width: 100% !important;
+        margin-top: 28px !important;
+    }
+
+    .here-img-wrapper::before {
+        display: none;
     }
 
     .here-sofa-img {
         width: 100% !important;
-        height: auto !important;
+        height: 280px !important;
+        object-fit: cover;
         top: 0 !important;
     }
 
-    /* ── ABOUT：INTRODUCTION section ── */
+    /* ══════════════════════════════════════════
+       ABOUT：Section 4 — INTRODUCTION
+       核心修法：把絕對定位全部改回正常流
+    ══════════════════════════════════════════ */
     .section-intro {
+        display: flex !important;
+        flex-direction: column !important;
+        position: static !important;
+        margin-top: 40px !important;
+        margin-bottom: 60px !important;
         overflow: hidden;
     }
 
-    .intro-right {
+    .intro-bg-img {
+        position: static !important;
         width: 100% !important;
-        padding: 30px 5% !important;
-        gap: 12px !important;
+        height: 280px !important;
+        object-fit: cover;
+        object-position: center top;
     }
 
-    .img-vertical-text,
-    .img-signature-side {
+    .intro-left-overlay {
         display: none !important;
     }
 
+    .img-vertical-text,
+    .img-signature-side,
+    .img-signature {
+        display: none !important;
+    }
+
+    .intro-right {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 32px 6% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        background-color: #F0EAE4;
+        justify-content: flex-start !important;
+    }
+
     .img-eng-quote {
+        position: static !important;
         width: 100% !important;
         max-width: 100% !important;
-        left: 0 !important;
-        top: 0 !important;
+        left: auto !important;
+        top: auto !important;
     }
 
     .img-zh-quote {
+        position: static !important;
         width: 100% !important;
         max-width: 100% !important;
-        left: 0 !important;
-        top: 0 !important;
+        left: auto !important;
+        top: auto !important;
     }
 
     .director-row {
-        left: 0 !important;
-        top: 0 !important;
-        flex-wrap: wrap;
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        margin-top: 0 !important;
         gap: 16px;
     }
 
     .img-director-desc {
+        position: static !important;
         width: 100% !important;
         max-width: 100% !important;
         transform: none !important;
+        left: auto !important;
+        top: auto !important;
     }
 
-    .img-signature {
-        left: 20px !important;
-        width: 100px !important;
-    }
-
-    /* ── SERVICES：重置所有 transform 偏移 ── */
-    .sv-pair {
-        grid-template-columns: 1fr !important;
-    }
-
-    .sv-side--illus {
-        display: none !important;
+    /* ══════════════════════════════════════════
+       SERVICES：流程步驟
+    ══════════════════════════════════════════ */
+    .sv-process-wrap {
+        padding: 20px 6% 40px !important;
     }
 
     .sv-tl-img {
         display: none !important;
     }
 
-    .sv-pair:nth-child(2) .sv-side--steps,
-    .sv-pair:nth-child(3) .sv-side--steps {
-        transform: none !important;
-        padding: 10px 5% !important;
-        align-items: flex-start !important;
+    .sv-pair {
+        display: flex !important;
+        flex-direction: column !important;
+        margin-bottom: 0 !important;
     }
 
-    .sv-pair:nth-child(2) .sv-desc,
-    .sv-pair:nth-child(2) .sv-step:last-child,
-    .sv-pair:nth-child(3) .sv-step:first-child,
-    .sv-pair:nth-child(3) .sv-step:first-child .sv-subtitle,
-    .sv-pair:nth-child(3) .sv-step:first-child .sv-desc,
-    .sv-pair:nth-child(3) .sv-step:last-child,
-    .sv-pair:nth-child(3) .sv-step:last-child .sv-subtitle,
-    .sv-pair:nth-child(3) .sv-step:last-child .sv-desc,
-    .sv-pair:nth-child(4) .sv-step:first-child,
-    .sv-pair:nth-child(4) .sv-step:last-child,
-    .sv-pair:nth-child(4) .sv-step:first-child .sv-desc,
-    .sv-pair:nth-child(4) .sv-step:last-child .sv-desc {
-        transform: none !important;
+    .sv-side--illus {
+        display: none !important;
     }
 
     .sv-side--steps {
-        padding: 10px 5% !important;
+        padding: 0 !important;
+        width: 100% !important;
+        gap: 28px !important;
     }
 
-    /* ── CONTACT/SERVICES 表單：單欄 ── */
-    body.contact-page .sv-form,
-    body.services-page .sv-form {
+    /* 清掉所有步驟的 transform 偏移 */
+    .sv-pair .sv-side--steps,
+    .sv-pair .sv-step,
+    .sv-pair .sv-desc,
+    .sv-pair .sv-subtitle {
         transform: none !important;
-        grid-template-columns: 1fr !important;
-        margin-top: 40px !important;
-        column-gap: 0 !important;
+    }
+
+    .sv-step {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(156, 133, 117, 0.2);
+    }
+
+    .sv-num {
+        height: 28px !important;
+    }
+
+    .sv-title {
+        height: 20px !important;
+        transform: none !important;
+    }
+
+    .sv-subtitle,
+    .sv-desc {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 10px;
+    }
+
+    /* ══════════════════════════════════════════
+       SERVICES / CONTACT：表單單欄
+    ══════════════════════════════════════════ */
+    .sv-contact {
+        margin-top: 60px !important;
+        padding: 0 6% 60px !important;
+    }
+
+    .sv-contact-title {
+        width: 60% !important;
+        min-width: 0 !important;
+        margin: -40px auto 40px !important;
     }
 
     .sv-contact-intro {
-        width: 90% !important;
+        width: 100% !important;
         min-width: 0 !important;
+        margin: 0 auto 30px !important;
     }
 
-    /* ── CONTACT：資訊區 ── */
+    .sv-form {
+        transform: none !important;
+        grid-template-columns: 1fr !important;
+        margin-top: 20px !important;
+        column-gap: 0 !important;
+    }
+
+    /* 第三排備註欄的 span 2 在單欄下要重置 */
+    .sv-form-field[style*="grid-column"] {
+        grid-column: 1 !important;
+    }
+
+    /* ══════════════════════════════════════════
+       CONTACT：資訊 & 地圖區
+    ══════════════════════════════════════════ */
+    .ct-info-body {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
     .ct-info-left {
         width: 100% !important;
         margin-left: 0 !important;
@@ -2233,6 +2365,7 @@ body.contact-page .site-footer {
 
     .ct-info-logo {
         margin-left: 0 !important;
+        margin-top: 20px !important;
     }
 
     .ct-info-list {
@@ -2246,12 +2379,15 @@ body.contact-page .site-footer {
     .ct-map-iframe {
         width: 100% !important;
         margin-left: 0 !important;
-        margin-top: 30px !important;
+        margin-top: 20px !important;
+        height: 300px !important;
     }
 
-    /* ── Footer ── */
+    /* ══════════════════════════════════════════
+       Footer 間距
+    ══════════════════════════════════════════ */
     body.services-page .site-footer,
     body.contact-page .site-footer {
-        margin-top: 60px;
+        margin-top: 40px;
     }
 }
