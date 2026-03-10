@@ -1614,6 +1614,7 @@ body.contact-page {
     flex-direction: column;
     padding-top: 34px;
     justify-content: space-between;
+    min-width: 0;
 }
 
 .sv-form-field label {
@@ -1722,10 +1723,14 @@ body.contact-page {
     align-items: center;
     cursor: pointer;
     user-select: none;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .sv-multiselect-text {
     flex: 1;
+    min-width: 0;
     font-family: var(--font-sans);
     font-size: 17px;
     color: #5C4D42;

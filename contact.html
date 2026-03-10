@@ -31,7 +31,7 @@
             <a href="contact.html"><img src="about_png/ABOUT_CONTACT-B-t.png" alt="CONTACT"></a>
             <a href="services.html"><img src="about_png/ABOUT_SERVICES-B-t.png" alt="SERVICES"></a>
         </nav>
-        <a href="https://www.instagram.com/silkyjade.design/" target="_blank" class="ig-link" aria-label="Instagram">
+        <a href="https://www.instagram.com/silkyjade2023?igsh=Z3oxdTZscGZrMTJu&utm_source=qr" target="_blank" class="ig-link" aria-label="Instagram">
             <img src="about_png/ABOUT_IGICON-B.png" alt="Instagram">
         </a>
     </header>
@@ -222,13 +222,13 @@
                         </li>
                     </ul>
                     <div class="ct-social">
-                        <a href="https://www.instagram.com/silkyjade.design/" target="_blank" aria-label="Instagram">
+                        <a href="https://www.instagram.com/silkyjade2023?igsh=Z3oxdTZscGZrMTJu&utm_source=qr" target="_blank" aria-label="Instagram">
                             <img src="CONTACT_png/CONTACT/png/CONTACT_IGICON.png" alt="Instagram">
                         </a>
                         <a href="#" aria-label="LINE">
                             <img src="CONTACT_png/CONTACT/png/CONTACT_LINEICON.png" alt="LINE">
                         </a>
-                        <a href="#" aria-label="Facebook">
+                        <a href="https://www.facebook.com/share/181WquBtus/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
                             <img src="CONTACT_png/CONTACT/png/CONTACT_FBICON.png" alt="Facebook">
                         </a>
                     </div>
@@ -269,6 +269,40 @@
     </footer>
 
     <script src="main.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // ★ 請將下方三個值替換成你在 EmailJS 取得的資訊 ★
+        const EMAILJS_PUBLIC_KEY  = 'oRtt2Q7nWHtJusmcV';
+        const EMAILJS_SERVICE_ID  = 'service_b4q0o2i';
+        const EMAILJS_TEMPLATE_ID = 'template_f0l76y6';
+
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            btn.disabled = true;
+
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+                .then(() => {
+                    alert('表單已成功送出！我們將盡快與您聯繫。');
+                    this.reset();
+                    // 清空自訂下拉顯示文字
+                    this.querySelectorAll('.sv-multiselect-text').forEach(el => el.textContent = '');
+                    this.querySelectorAll('input[type="hidden"]').forEach(el => el.value = '');
+                    this.querySelectorAll('.sv-ms-single.is-selected').forEach(el => el.classList.remove('is-selected'));
+                    this.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+                })
+                .catch((err) => {
+                    alert('送出失敗，請稍後再試或直接來電聯繫。');
+                    console.error('EmailJS error:', err);
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                });
+        });
+    </script>
 </body>
 
 </html>
