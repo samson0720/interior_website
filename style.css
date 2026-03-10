@@ -1990,3 +1990,268 @@ body.contact-page .site-footer {
         gap: 15px;
     }
 }
+
+
+/* =============================================
+   COMPREHENSIVE MOBILE FIXES
+   ============================================= */
+@media (max-width: 768px) {
+
+    /* 防止任何頁面橫向溢出 */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    /* ── HOME：導覽列覆蓋層改深色，白色圖示才看得到 ── */
+    body.home-page .main-nav {
+        background: rgba(30, 25, 22, 0.96);
+    }
+
+    /* ── ABOUT：概念文字區（絕對定位轉正常流） ── */
+    .concept-section .row {
+        flex-direction: column;
+    }
+
+    .concept-left {
+        width: 100% !important;
+        padding-top: 80px !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+
+    .concept-right {
+        width: 100% !important;
+    }
+
+    .concept-table-img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .concept-img-wrapper {
+        width: 60% !important;
+        height: auto !important;
+    }
+
+    .concept-text {
+        position: static !important;
+        margin-top: 30px;
+    }
+
+    .concept-text .section-title-img {
+        width: 120px !important;
+        height: auto !important;
+    }
+
+    .concept-text .section-text-img {
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+
+    /* ── ABOUT：touching section ── */
+    .touching-section {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+
+    .touching-left {
+        width: 100% !important;
+    }
+
+    .touching-arch-wrapper {
+        width: 100% !important;
+    }
+
+    .touching-arch-img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .touching-right {
+        width: 100% !important;
+    }
+
+    .comfortable-title-img {
+        margin-left: 0 !important;
+        margin-top: 20px !important;
+        width: 55% !important;
+    }
+
+    .touching-content-wrapper {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .touching-plant-img {
+        width: 45% !important;
+        height: auto !important;
+        margin-left: 0 !important;
+    }
+
+    .touching-content-wrapper .section-text-img {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    /* ── ABOUT：HERE section ── */
+    .here-section .row {
+        flex-direction: column;
+    }
+
+    .here-left {
+        width: 100% !important;
+        padding-left: 5% !important;
+    }
+
+    .here-right {
+        width: 100% !important;
+    }
+
+    .here-text {
+        position: static !important;
+        margin-top: 20px;
+    }
+
+    .here-text .section-text-img {
+        position: static !important;
+        width: 80% !important;
+    }
+
+    .here-sofa-img {
+        width: 100% !important;
+        height: auto !important;
+        top: 0 !important;
+    }
+
+    /* ── ABOUT：INTRODUCTION section ── */
+    .section-intro {
+        overflow: hidden;
+    }
+
+    .intro-right {
+        width: 100% !important;
+        padding: 30px 5% !important;
+        gap: 12px !important;
+    }
+
+    .img-vertical-text,
+    .img-signature-side {
+        display: none !important;
+    }
+
+    .img-eng-quote {
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        top: 0 !important;
+    }
+
+    .img-zh-quote {
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        top: 0 !important;
+    }
+
+    .director-row {
+        left: 0 !important;
+        top: 0 !important;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .img-director-desc {
+        width: 100% !important;
+        max-width: 100% !important;
+        transform: none !important;
+    }
+
+    .img-signature {
+        left: 20px !important;
+        width: 100px !important;
+    }
+
+    /* ── SERVICES：重置所有 transform 偏移 ── */
+    .sv-pair {
+        grid-template-columns: 1fr !important;
+    }
+
+    .sv-side--illus {
+        display: none !important;
+    }
+
+    .sv-tl-img {
+        display: none !important;
+    }
+
+    .sv-pair:nth-child(2) .sv-side--steps,
+    .sv-pair:nth-child(3) .sv-side--steps {
+        transform: none !important;
+        padding: 10px 5% !important;
+        align-items: flex-start !important;
+    }
+
+    .sv-pair:nth-child(2) .sv-desc,
+    .sv-pair:nth-child(2) .sv-step:last-child,
+    .sv-pair:nth-child(3) .sv-step:first-child,
+    .sv-pair:nth-child(3) .sv-step:first-child .sv-subtitle,
+    .sv-pair:nth-child(3) .sv-step:first-child .sv-desc,
+    .sv-pair:nth-child(3) .sv-step:last-child,
+    .sv-pair:nth-child(3) .sv-step:last-child .sv-subtitle,
+    .sv-pair:nth-child(3) .sv-step:last-child .sv-desc,
+    .sv-pair:nth-child(4) .sv-step:first-child,
+    .sv-pair:nth-child(4) .sv-step:last-child,
+    .sv-pair:nth-child(4) .sv-step:first-child .sv-desc,
+    .sv-pair:nth-child(4) .sv-step:last-child .sv-desc {
+        transform: none !important;
+    }
+
+    .sv-side--steps {
+        padding: 10px 5% !important;
+    }
+
+    /* ── CONTACT/SERVICES 表單：單欄 ── */
+    body.contact-page .sv-form,
+    body.services-page .sv-form {
+        transform: none !important;
+        grid-template-columns: 1fr !important;
+        margin-top: 40px !important;
+        column-gap: 0 !important;
+    }
+
+    .sv-contact-intro {
+        width: 90% !important;
+        min-width: 0 !important;
+    }
+
+    /* ── CONTACT：資訊區 ── */
+    .ct-info-left {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .ct-info-logo {
+        margin-left: 0 !important;
+    }
+
+    .ct-info-list {
+        margin-left: 0 !important;
+    }
+
+    .ct-social {
+        margin-left: 0 !important;
+    }
+
+    .ct-map-iframe {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-top: 30px !important;
+    }
+
+    /* ── Footer ── */
+    body.services-page .site-footer,
+    body.contact-page .site-footer {
+        margin-top: 60px;
+    }
+}
