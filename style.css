@@ -2458,6 +2458,47 @@ body.contact-page .site-footer {
         overflow: hidden;
     }
 
+    /* ── Services 流程：重置所有 px transform，避免平板版內容錯位 ── */
+    .sv-pair:nth-child(2) .sv-side--steps,
+    .sv-pair:nth-child(2) .sv-desc,
+    .sv-pair:nth-child(3) .sv-step:first-child,
+    .sv-pair:nth-child(3) .sv-step:first-child .sv-subtitle,
+    .sv-pair:nth-child(3) .sv-step:first-child .sv-desc,
+    .sv-pair:nth-child(3) .sv-step:last-child,
+    .sv-pair:nth-child(3) .sv-step:last-child .sv-desc,
+    .sv-pair:nth-child(3) .sv-step:last-child .sv-subtitle,
+    .sv-pair:nth-child(4) .sv-step:first-child,
+    .sv-pair:nth-child(4) .sv-step:last-child,
+    .sv-pair:nth-child(4) .sv-step:first-child .sv-desc,
+    .sv-pair:nth-child(4) .sv-step:last-child .sv-desc,
+    .sv-pair:nth-child(4) .sv-step:last-child .sv-subtitle {
+        transform: none;
+    }
+
+    /* ── 插圖縮小，避免在平板佔太多空間 ── */
+    .sv-illus-img {
+        max-width: 160px;
+    }
+
+    .sv-illus-floor {
+        transform: none;
+        max-width: 200px;
+    }
+
+    .sv-illus-room {
+        transform: none;
+        max-width: 280px;
+    }
+
+    /* ── 首頁 hero 底部右側文字，防 calc() 在窄平板產生負值 ── */
+    .hero-text-bottom-right {
+        right: 5%;
+    }
+
+    .hero-text-bottom-left {
+        left: 5%;
+    }
+
     /* ── Projects caption：仍疊在圖上，但加半透明漸層確保可讀 ── */
     .project-photo-full {
         overflow: hidden;
