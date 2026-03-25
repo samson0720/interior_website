@@ -9,9 +9,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Noto+Sans+TC:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Noto+Sans+TC:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Noto+Sans+TC:wght@300;400;500&display=swap"></noscript>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,20 +20,20 @@
     <!-- ========== Header ========== -->
     <header>
         <a href="index.html" class="logo-link">
-            <img src="SERVICES_png/png/LOGO-B-t.png" alt="帛瑀 Silky Jade LOGO">
+            <img decoding="async" src="SERVICES_png/png/LOGO-B-t.webp" alt="帛瑀 Silky Jade LOGO">
         </a>
         <nav class="main-nav">
-            <a href="index.html"><img src="SERVICES_png/png/HOME-B-t.png" alt="HOME"></a>
-            <a href="about.html"><img src="SERVICES_png/png/ABOUT-B-t.png" alt="ABOUT"></a>
-            <a href="projects.html"><img src="SERVICES_png/png/PROJECTS-B-t.png" alt="PROJECTS"></a>
-            <a href="contact.html"><img src="SERVICES_png/png/CONTACT-B-t.png" alt="CONTACT"></a>
-            <a href="services.html"><img src="SERVICES_png/png/SERVICES-B-t.png" alt="SERVICES"></a>
+            <a href="index.html"><img decoding="async" src="SERVICES_png/png/HOME-B-t.webp" alt="HOME"></a>
+            <a href="about.html"><img decoding="async" src="SERVICES_png/png/ABOUT-B-t.webp" alt="ABOUT"></a>
+            <a href="projects.html"><img decoding="async" src="SERVICES_png/png/PROJECTS-B-t.webp" alt="PROJECTS"></a>
+            <a href="contact.html"><img decoding="async" src="SERVICES_png/png/CONTACT-B-t.webp" alt="CONTACT"></a>
+            <a href="services.html"><img decoding="async" src="SERVICES_png/png/SERVICES-B-t.webp" alt="SERVICES"></a>
         </nav>
         <!-- Hamburger (Mobile Only) -->
         <button class="mobile-menu-toggle" aria-label="選單"><span></span><span></span><span></span></button>
 
         <a href="https://www.instagram.com/silkyjade2023?igsh=Z3oxdTZscGZrMTJu&utm_source=qr" target="_blank" class="ig-link" aria-label="Instagram">
-            <img src="SERVICES_png/png/IGICON-B.png" alt="Instagram">
+            <img decoding="async" src="SERVICES_png/png/IGICON-B.webp" alt="Instagram">
         </a>
     </header>
 
@@ -42,34 +41,34 @@
 
         <!-- ① SERVICES 大標題 -->
         <section class="sv-hero">
-            <img src="SERVICES_png/png/SERVICES_SERVICES-B-T.png" alt="SERVICES" class="sv-hero-title">
+            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_SERVICES-B-T.webp" alt="SERVICES" class="sv-hero-title">
         </section>
 
         <!-- ② 服務流程 -->
         <section class="sv-process-wrap">
 
             <!-- image-4：垂直時間軸，絕對定位拉滿高度 -->
-            <img src="SERVICES_png/png/SERVICES_image-4.png" alt="" class="sv-tl-img">
+            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_image-4.webp" alt="" class="sv-tl-img">
 
             <!-- Pair 1：插圖 左 / 步驟 01+02 右 -->
             <div class="sv-pair">
                 <div class="sv-side sv-side--illus">
-                    <img src="SERVICES_png/png/SERVICES_image-1.png" alt="" class="sv-illus-img">
+                    <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_image-1.webp" alt="" class="sv-illus-img">
                 </div>
                 <div class="sv-side sv-side--steps">
                     <div class="sv-step">
                         <div class="sv-step-head">
-                            <img src="SERVICES_png/png/SERVICES_01-t.png" alt="01" class="sv-num">
-                            <img src="SERVICES_png/png/SERVICES_text-1.png" alt="初步接洽" class="sv-title">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_01-t.webp" alt="01" class="sv-num">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-1.webp" alt="初步接洽" class="sv-title">
                         </div>
-                        <img src="SERVICES_png/png/SERVICES_text-2.png" alt="" class="sv-desc">
+                        <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-2.webp" alt="" class="sv-desc">
                     </div>
                     <div class="sv-step">
                         <div class="sv-step-head">
-                            <img src="SERVICES_png/png/SERVICES_02-t.png" alt="02" class="sv-num">
-                            <img src="SERVICES_png/png/SERVICES_text-3.png" alt="現場丈量" class="sv-title">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_02-t.webp" alt="02" class="sv-num">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-3.webp" alt="現場丈量" class="sv-title">
                         </div>
-                        <img src="SERVICES_png/png/SERVICES_text-4.png" alt="" class="sv-desc">
+                        <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-4.webp" alt="" class="sv-desc">
                     </div>
                 </div>
             </div>
@@ -79,45 +78,45 @@
                 <div class="sv-side sv-side--steps">
                     <div class="sv-step">
                         <div class="sv-step-head">
-                            <img src="SERVICES_png/png/SERVICES_03-t.png" alt="03" class="sv-num">
-                            <img src="SERVICES_png/png/SERVICES_text-5.png" alt="平面配置" class="sv-title">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_03-t.webp" alt="03" class="sv-num">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-5.webp" alt="平面配置" class="sv-title">
                         </div>
-                        <img src="SERVICES_png/png/SERVICES_text-6.png" alt="" class="sv-subtitle">
-                        <img src="SERVICES_png/png/SERVICES_text-7.png" alt="" class="sv-desc">
+                        <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-6.webp" alt="" class="sv-subtitle">
+                        <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-7.webp" alt="" class="sv-desc">
                     </div>
                     <div class="sv-step">
                         <div class="sv-step-head">
-                            <img src="SERVICES_png/png/SERVICES_04-t.png" alt="04" class="sv-num">
-                            <img src="SERVICES_png/png/SERVICES_text-8.png" alt="設計提案" class="sv-title">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_04-t.webp" alt="04" class="sv-num">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-8.webp" alt="設計提案" class="sv-title">
                         </div>
-                        <img src="SERVICES_png/png/SERVICES_text-9.png" alt="" class="sv-subtitle">
-                        <img src="SERVICES_png/png/SERVICES_text-10.png" alt="" class="sv-desc">
+                        <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-9.webp" alt="" class="sv-subtitle">
+                        <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-10.webp" alt="" class="sv-desc">
                     </div>
                 </div>
                 <div class="sv-side sv-side--illus">
-                    <img src="SERVICES_png/png/SERVICES_image-2.png" alt="" class="sv-illus-img sv-illus-floor">
+                    <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_image-2.webp" alt="" class="sv-illus-img sv-illus-floor">
                 </div>
             </div>
 
             <!-- Pair 3：插圖 左 / 步驟 05+06 右 -->
             <div class="sv-pair">
                 <div class="sv-side sv-side--illus">
-                    <img src="SERVICES_png/png/SERVICES_image-3.png" alt="" class="sv-illus-img sv-illus-room">
+                    <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_image-3.webp" alt="" class="sv-illus-img sv-illus-room">
                 </div>
                 <div class="sv-side sv-side--steps">
                     <div class="sv-step">
                         <div class="sv-step-head">
-                            <img src="SERVICES_png/png/SERVICES_05-t.png" alt="05" class="sv-num">
-                            <img src="SERVICES_png/png/SERVICES_text-11.png" alt="工程階段" class="sv-title">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_05-t.webp" alt="05" class="sv-num">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-11.webp" alt="工程階段" class="sv-title">
                         </div>
-                        <img src="SERVICES_png/png/SERVICES_text-12.png" alt="" class="sv-desc">
+                        <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-12.webp" alt="" class="sv-desc">
                     </div>
                     <div class="sv-step">
                         <div class="sv-step-head">
-                            <img src="SERVICES_png/png/SERVICES_06-t.png" alt="06" class="sv-num">
-                            <img src="SERVICES_png/png/SERVICES_text-13.png" alt="完工交屋" class="sv-title">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_06-t.webp" alt="06" class="sv-num">
+                            <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-13.webp" alt="完工交屋" class="sv-title">
                         </div>
-                        <img src="SERVICES_png/png/SERVICES_text-14.png" alt="" class="sv-desc">
+                        <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-14.webp" alt="" class="sv-desc">
                     </div>
                 </div>
             </div>
@@ -126,32 +125,32 @@
 
         <!-- ③ CONTACT 聯絡區 -->
         <section class="sv-contact">
-<img src="SERVICES_png/png/SERVICES_text-15.png" alt="" class="sv-contact-intro">
+<img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-15.webp" alt="" class="sv-contact-intro">
 
             <form class="sv-form" id="servicesForm">
 
                 <!-- Row 1：4 欄，純文字輸入 -->
                 <div class="sv-form-row">
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-16.png" alt="姓名 Name"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-16.webp" alt="姓名 Name"></label>
                         <div class="sv-input-wrap">
                             <input type="text" name="name">
                         </div>
                     </div>
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-17.png" alt="LINE ID"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-17.webp" alt="LINE ID"></label>
                         <div class="sv-input-wrap">
                             <input type="text" name="line_id">
                         </div>
                     </div>
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-18.png" alt="E-mail"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-18.webp" alt="E-mail"></label>
                         <div class="sv-input-wrap">
                             <input type="email" name="email">
                         </div>
                     </div>
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-19.png" alt="聯絡電話 Phone"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-19.webp" alt="聯絡電話 Phone"></label>
                         <div class="sv-input-wrap">
                             <input type="tel" name="phone">
                         </div>
@@ -161,11 +160,11 @@
                 <!-- Row 2：4 欄，房屋狀況/預算 有下拉 -->
                 <div class="sv-form-row">
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-20.png" alt="房屋狀況 Type"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-20.webp" alt="房屋狀況 Type"></label>
                         <div class="sv-input-wrap sv-multiselect-wrap" data-single="true">
                             <div class="sv-multiselect-trigger">
                                 <span class="sv-multiselect-text"></span>
-                                <img src="SERVICES_png/png/SERVICES_triangle-button.png" alt="" class="sv-tri">
+                                <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_triangle-button.webp" alt="" class="sv-tri">
                             </div>
                             <div class="sv-multiselect-dropdown">
                                 <div class="sv-ms-option sv-ms-single" data-value="預售屋(客變)">預售屋(客變)</div>
@@ -180,17 +179,17 @@
                         </div>
                     </div>
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-21.png" alt="空間坪數 Square Footage"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-21.webp" alt="空間坪數 Square Footage"></label>
                         <div class="sv-input-wrap">
                             <input type="text" name="footage">
                         </div>
                     </div>
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-22.png" alt="預算 Budget"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-22.webp" alt="預算 Budget"></label>
                         <div class="sv-input-wrap sv-multiselect-wrap" data-single="true">
                             <div class="sv-multiselect-trigger">
                                 <span class="sv-multiselect-text"></span>
-                                <img src="SERVICES_png/png/SERVICES_triangle-button.png" alt="" class="sv-tri">
+                                <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_triangle-button.webp" alt="" class="sv-tri">
                             </div>
                             <div class="sv-multiselect-dropdown">
                                 <div class="sv-ms-option sv-ms-single" data-value="80~150萬">80~150萬</div>
@@ -205,7 +204,7 @@
                         </div>
                     </div>
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-23.png" alt="建案地點 Location"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-23.webp" alt="建案地點 Location"></label>
                         <div class="sv-input-wrap">
                             <input type="text" name="location">
                         </div>
@@ -215,11 +214,11 @@
                 <!-- Row 3：3 欄，方便聯絡時段/喜好風格 有下拉 -->
                 <div class="sv-form-row sv-form-row--3">
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-24.png" alt="方便聯絡時段"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-24.webp" alt="方便聯絡時段"></label>
                         <div class="sv-input-wrap sv-multiselect-wrap">
                             <div class="sv-multiselect-trigger">
                                 <span class="sv-multiselect-text"></span>
-                                <img src="SERVICES_png/png/SERVICES_triangle-button.png" alt="" class="sv-tri">
+                                <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_triangle-button.webp" alt="" class="sv-tri">
                             </div>
                             <div class="sv-multiselect-dropdown">
                                 <label class="sv-ms-option"><input type="checkbox" value="平日早上(9:30~11:59)"><span>平日早上(9:30~11:59)</span></label>
@@ -234,11 +233,11 @@
                         </div>
                     </div>
                     <div class="sv-form-field">
-                        <label><img src="SERVICES_png/png/SERVICES_text-25.png" alt="喜好風格"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-25.webp" alt="喜好風格"></label>
                         <div class="sv-input-wrap sv-multiselect-wrap">
                             <div class="sv-multiselect-trigger">
                                 <span class="sv-multiselect-text"></span>
-                                <img src="SERVICES_png/png/SERVICES_triangle-button.png" alt="" class="sv-tri">
+                                <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_triangle-button.webp" alt="" class="sv-tri">
                             </div>
                             <div class="sv-multiselect-dropdown">
                                 <label class="sv-ms-option"><input type="checkbox" value="侘寂風"><span>侘寂風</span></label>
@@ -255,7 +254,7 @@
                         </div>
                     </div>
                     <div class="sv-form-field" style="grid-column: span 2;">
-                        <label><img src="SERVICES_png/png/SERVICES_text-26.png" alt="備註 Message"></label>
+                        <label><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_text-26.webp" alt="備註 Message"></label>
                         <div class="sv-input-wrap">
                             <input type="text" name="message">
                         </div>
@@ -265,7 +264,7 @@
                 <!-- Submit -->
                 <div class="sv-form-submit">
                     <button type="submit">
-                        <img src="SERVICES_png/png/SERVICES_SUBMIT-button.png" alt="SUBMIT">
+                        <img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES_SUBMIT-button.webp" alt="SUBMIT">
                     </button>
                 </div>
 
@@ -277,19 +276,19 @@
     <!-- ========== Footer ========== -->
     <footer class="site-footer">
         <div class="footer-left">
-            <img src="SERVICES_png/png/LOGO.png" alt="帛瑀 Silky Jade">
+            <img loading="lazy" decoding="async" src="SERVICES_png/png/LOGO.webp" alt="帛瑀 Silky Jade">
         </div>
         <div class="footer-center">
             <nav class="footer-nav">
-                <a href="index.html"><img src="SERVICES_png/png/HOME-t.png" alt="HOME"></a>
-                <a href="about.html"><img src="SERVICES_png/png/ABOUT-t.png" alt="ABOUT"></a>
-                <a href="projects.html"><img src="SERVICES_png/png/PROJECTS-t.png" alt="PROJECTS"></a>
-                <a href="contact.html"><img src="SERVICES_png/png/CONTACT-t.png" alt="CONTACT"></a>
-                <a href="services.html"><img src="SERVICES_png/png/SERVICES-t.png" alt="SERVICES"></a>
+                <a href="index.html"><img loading="lazy" decoding="async" src="SERVICES_png/png/HOME-t.webp" alt="HOME"></a>
+                <a href="about.html"><img loading="lazy" decoding="async" src="SERVICES_png/png/ABOUT-t.webp" alt="ABOUT"></a>
+                <a href="projects.html"><img loading="lazy" decoding="async" src="SERVICES_png/png/PROJECTS-t.webp" alt="PROJECTS"></a>
+                <a href="contact.html"><img loading="lazy" decoding="async" src="SERVICES_png/png/CONTACT-t.webp" alt="CONTACT"></a>
+                <a href="services.html"><img loading="lazy" decoding="async" src="SERVICES_png/png/SERVICES-t.webp" alt="SERVICES"></a>
             </nav>
         </div>
         <div class="footer-right">
-            <img src="SERVICES_png/png/@2026-t.png" alt="© 2026 SILKY JADE. ALL RIGHTS RESERVED.">
+            <img loading="lazy" decoding="async" src="SERVICES_png/png/@2026-t.webp" alt="© 2026 SILKY JADE. ALL RIGHTS RESERVED.">
         </div>
     </footer>
 

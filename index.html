@@ -10,10 +10,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"></noscript>
 
+    <link rel="preload" href="home_png/HOME.webp" as="image" fetchpriority="high">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,16 +24,16 @@
     <header>
         <!-- Left: Logo -->
         <a href="/" class="logo-link">
-            <img src="home_png/HOME_LOGO.png" alt="帛瑪 Silky Jade LOGO">
+            <img fetchpriority="high" decoding="async" src="home_png/HOME_LOGO.webp" alt="帛瑪 Silky Jade LOGO">
         </a>
 
         <!-- Center: Nav (純圖片，無文字) -->
         <nav class="main-nav">
-            <a href="index.html"><img src="home_png/HOME_HOME-t.png" alt="HOME"></a>
-            <a href="about.html"><img src="home_png/HOME_ABOUT-t.png" alt="ABOUT"></a>
-            <a href="projects.html"><img src="home_png/HOME_PROJECTS-t.png" alt="PROJECTS"></a>
-            <a href="contact.html"><img src="home_png/HOME_CONTACT-t.png" alt="CONTACT"></a>
-            <a href="services.html"><img src="home_png/HOME_SERVICES-t.png" alt="SERVICES"></a>
+            <a href="index.html"><img decoding="async" src="home_png/HOME_HOME-t.webp" alt="HOME"></a>
+            <a href="about.html"><img decoding="async" src="home_png/HOME_ABOUT-t.webp" alt="ABOUT"></a>
+            <a href="projects.html"><img decoding="async" src="home_png/HOME_PROJECTS-t.webp" alt="PROJECTS"></a>
+            <a href="contact.html"><img decoding="async" src="home_png/HOME_CONTACT-t.webp" alt="CONTACT"></a>
+            <a href="services.html"><img decoding="async" src="home_png/HOME_SERVICES-t.webp" alt="SERVICES"></a>
         </nav>
 
         <!-- Hamburger (Mobile Only) -->
@@ -41,33 +41,33 @@
 
         <!-- Right: IG Icon -->
         <a href="https://www.instagram.com/silkyjade2023?igsh=Z3oxdTZscGZrMTJu&utm_source=qr" target="_blank" class="ig-link" aria-label="Instagram">
-            <img src="home_png/HOME_IGICON.png" alt="Instagram">
+            <img decoding="async" src="home_png/HOME_IGICON.webp" alt="Instagram">
         </a>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-image-wrapper">
-            <img src="home_png/HOME.png" alt="Silky Jade Interior Design Context" class="hero-bg-img">
+            <img fetchpriority="high" decoding="async" src="home_png/HOME.webp" alt="Silky Jade Interior Design Context" class="hero-bg-img">
         </div>
 
         <!-- Text Elements (Absolutely Positioned Images) -->
         <div class="hero-slogan-center">
-            <img src="home_png/HOME_Designed with-t.png" alt="Designed with warmth. Crafted with care.">
+            <img loading="lazy" decoding="async" src="home_png/HOME_Designed with-t.webp" alt="Designed with warmth. Crafted with care.">
         </div>
 
         <div class="hero-text-bottom-left">
-            <img src="home_png/HOME_silkyjade-t.png" alt="Silky Jade Interior Design Co. Ltd.">
+            <img loading="lazy" decoding="async" src="home_png/HOME_silkyjade-t.webp" alt="Silky Jade Interior Design Co. Ltd.">
         </div>
 
         <div class="hero-text-bottom-right">
-            <img src="home_png/HOME_t-t.png" alt="溫度設計 | 細節落地">
+            <img loading="lazy" decoding="async" src="home_png/HOME_t-t.webp" alt="溫度設計 | 細節落地">
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="home-footer">
-        <img src="home_png/HOME_@2026-t.png" alt="© 2026 SILKY JADE. ALL RIGHTS RESERVED.">
+        <img loading="lazy" decoding="async" src="home_png/HOME_@2026-t.webp" alt="© 2026 SILKY JADE. ALL RIGHTS RESERVED.">
     </footer>
 
     <!-- JavaScript -->
