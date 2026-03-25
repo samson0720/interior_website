@@ -3256,6 +3256,7 @@ body.contact-page .site-footer {
         width: 100% !important;
         max-width: 100% !important;
         height: auto !important;
+        transform: none !important;
     }
 }
 
