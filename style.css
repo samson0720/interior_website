@@ -1982,56 +1982,83 @@ body.contact-page .site-footer {
         flex-direction: column;
         align-items: center;
         gap: 0;
-        padding: 50px 28px 40px;
+        padding: 56px 32px 48px;
         text-align: center;
     }
 
-    /* Logo */
+    /* ── Logo ── */
     .footer-left {
-        margin-bottom: 32px;
+        margin-bottom: 40px;
     }
 
     .footer-left img {
-        height: 44px;
-        opacity: 0.92;
+        height: 46px;
+        opacity: 0.88;
     }
 
-    /* Nav wrapper — 上下有細線 */
+    /* ── Nav wrapper：移除舊線框，改用 ::before / ::after 裝飾短線 ── */
     .footer-center {
-        width: 75%;
-        padding: 20px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.14);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-        margin-bottom: 24px;
+        width: 100%;
+        padding: 0;
+        border: none;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
+    .footer-center::before,
+    .footer-center::after {
+        content: '';
+        display: block;
+        width: 36px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.22);
+    }
+
+    .footer-center::before { margin-bottom: 30px; }
+    .footer-center::after  { margin-top: 30px; margin-bottom: 32px; }
+
+    /* ── Nav 垂直排列 ── */
     .footer-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px 24px;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 18px;
     }
 
-    /* Footer nav：隱藏 webp 圖片，以 CSS ::after 注入文字 */
+    /* ── Footer nav：隱藏 webp，以斜體 Playfair 注入文字 ── */
     .footer-nav a img {
         display: none !important;
     }
 
     .footer-nav a::after {
-        font-family: 'Noto Sans TC', sans-serif;
-        font-size: 0.65rem;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 0.88rem;
         font-weight: 400;
-        letter-spacing: 0.18em;
-        color: rgba(255, 255, 255, 0.6);
-        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: rgba(255, 255, 255, 0.62);
+        transition: color 0.25s;
     }
 
-    .footer-nav a[href="index.html"]::after    { content: "HOME"; }
-    .footer-nav a[href="about.html"]::after    { content: "ABOUT"; }
-    .footer-nav a[href="projects.html"]::after { content: "PROJECTS"; }
-    .footer-nav a[href="contact.html"]::after  { content: "CONTACT"; }
-    .footer-nav a[href="services.html"]::after { content: "SERVICES"; }
+    /* 修正瀏覽器 visited 顏色 */
+    .footer-nav a:visited::after {
+        color: rgba(255, 255, 255, 0.62);
+    }
 
-    /* Copyright */
+    .footer-nav a:hover::after {
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* Title case — 斜體配混合大小寫更優雅 */
+    .footer-nav a[href="index.html"]::after    { content: "Home"; }
+    .footer-nav a[href="about.html"]::after    { content: "About"; }
+    .footer-nav a[href="projects.html"]::after { content: "Projects"; }
+    .footer-nav a[href="contact.html"]::after  { content: "Contact"; }
+    .footer-nav a[href="services.html"]::after { content: "Services"; }
+
+    /* ── Copyright ── */
     .footer-right {
         margin-top: 0;
     }
