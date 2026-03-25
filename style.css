@@ -3103,4 +3103,145 @@ body.contact-page .site-footer {
         color: #1A1210 !important; border-bottom: 1px solid rgba(26, 18, 16, 0.28) !important;
         padding-bottom: 6px !important; text-transform: uppercase !important;
     }
+
+    /* ── About：HERE 稍微縮小避免過於破壞性 ── */
+    .here-text .m-title {
+        font-size: 3.2rem !important;
+    }
+}
+
+
+/* ==========================================================================
+   PROJECT DETAIL — 手機版資訊區
+   ========================================================================== */
+
+/* 預設隱藏 */
+.m-proj-nav,
+.m-proj-title,
+.m-proj-specs {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    /* 圖片區：移除過大 padding */
+    .project-detail-row-3 {
+        padding: 20px 4% !important;
+        gap: 8px !important;
+    }
+    .project-detail-row-3 img:first-child,
+    .project-detail-row-3 img:last-child {
+        transform: none !important;
+    }
+
+    .project-detail-row-2 {
+        padding: 20px 4% !important;
+        gap: 8px !important;
+    }
+    .project-detail-row-2 img:first-child,
+    .project-detail-row-2 img:last-child {
+        transform: none !important;
+    }
+
+    /* 資訊區 */
+    .project-detail-info {
+        padding: 52px 8% 72px !important;
+    }
+
+    /* NEXT PROJECT 按鈕 */
+    .project-detail-nav-btns {
+        justify-content: flex-start !important;
+        margin-bottom: 40px !important;
+    }
+    .project-nav-btn {
+        transform: none !important;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .project-nav-btn img { display: none !important; }
+    .m-proj-nav {
+        display: inline-block;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: #5C4D42;
+        letter-spacing: 0.08em;
+        border-bottom: 1px solid rgba(92, 77, 66, 0.35);
+        padding-bottom: 3px;
+    }
+
+    /* 內容區：垂直排列 */
+    .project-detail-content {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* 標題 */
+    .project-detail-title {
+        width: 100% !important;
+        transform: none !important;
+        margin-bottom: 28px;
+    }
+    .project-detail-title img { display: none !important; }
+    .m-proj-title { display: block; }
+    .m-proj-name {
+        display: block;
+        font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1A1210;
+        letter-spacing: 0.05em;
+        margin-bottom: 4px;
+    }
+    .m-proj-location {
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 0.85rem;
+        color: #9B7B5C;
+        letter-spacing: 0.12em;
+    }
+
+    /* 規格 */
+    .project-detail-specs {
+        width: 100% !important;
+        transform: none !important;
+        margin-bottom: 32px;
+    }
+    .project-detail-specs img { display: none !important; }
+    .m-proj-specs {
+        display: block;
+        list-style: none;
+        padding: 0; margin: 0;
+    }
+    .m-proj-specs li {
+        display: flex;
+        align-items: baseline;
+        gap: 0;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(155, 123, 92, 0.15);
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 0.82rem;
+    }
+    .spec-k {
+        color: #9B7B5C;
+        letter-spacing: 0.08em;
+        width: 5.5em;
+        flex-shrink: 0;
+    }
+    .spec-v {
+        color: #2C1F18;
+        letter-spacing: 0.05em;
+    }
+
+    /* 描述文字圖：全寬顯示 */
+    .project-detail-desc {
+        width: 100% !important;
+    }
+    .project-detail-desc img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
 }
