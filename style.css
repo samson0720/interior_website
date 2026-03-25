@@ -1116,6 +1116,58 @@ body.projects-page .site-footer {
     transform: translate(55px, -19px);
 }
 
+/* ============================================
+   Lights Transition Effect (大華 project-2)
+   ============================================ */
+
+.lights-transition {
+    position: relative;
+    line-height: 0;
+    overflow: hidden;
+    display: block;
+}
+
+.lights-transition .lights-off-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.lights-transition .lights-on-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.6s ease;
+    pointer-events: none;
+}
+
+/* 捲動進入視窗 → 永久點亮 */
+.lights-transition.is-lit .lights-on-img {
+    opacity: 1;
+}
+
+/* hover 裝置：滑入開燈、滑出關燈 */
+@media (hover: hover) {
+    /* 滑出 → 關燈（覆蓋 is-lit，燈回到熄滅狀態） */
+    .lights-transition:not(:hover) .lights-on-img {
+        opacity: 0;
+        transition: opacity 0.8s ease;
+    }
+    /* 滑入 → 開燈 */
+    .lights-transition:hover .lights-on-img {
+        opacity: 1;
+        transition: opacity 1.0s ease;
+    }
+}
+
+/* row-2 grid 內的 lights-transition 繼承位移 */
+.project-detail-row-2 .lights-transition:first-child {
+    transform: translateX(-22px);
+}
+
 /* Hover effect on projects page clickable photos */
 .project-photo-full a {
     display: block;

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroInteraction();
     initMobileMenu();
     initFadeInAnimations();
+    initLightsTransition();
     initMultiSelects();
     console.log('Silky Jade Scripts Loaded.');
 });
@@ -88,6 +89,33 @@ function initFadeInAnimations() {
         startObserving();
     } else {
         window.addEventListener('load', startObserving);
+    }
+}
+
+/**
+ * Lights Transition (大華 project-2)
+ * 當 .lights-transition 元素進入視窗時，加上 .is-lit 觸發開燈淡入效果。
+ */
+function initLightsTransition() {
+    const els = document.querySelectorAll('.lights-transition');
+    if (!els.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('is-lit');
+                }, 400);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.35 });
+
+    const start = () => els.forEach(el => observer.observe(el));
+    if (document.readyState === 'complete') {
+        start();
+    } else {
+        window.addEventListener('load', start);
     }
 }
 
