@@ -2968,12 +2968,12 @@ body.contact-page .site-footer {
 
     /* ── About Typography ── */
 
-    /* OUR CONCEPT: 小斜體標籤 */
+    /* OUR CONCEPT: 中型斜體標題 */
     .concept-text .m-title {
         font-family: 'Playfair Display', serif;
-        font-style: italic; font-size: 0.72rem; font-weight: 400;
-        letter-spacing: 0.28em; color: #9B7B5C;
-        line-height: 1; margin-bottom: 22px; text-transform: uppercase;
+        font-style: italic; font-size: 1.9rem; font-weight: 400;
+        letter-spacing: 0.04em; color: #9B7B5C;
+        line-height: 1.2; margin-bottom: 22px;
     }
 
     /* COMFORTABLE THOUGHTFUL TOUCHING: 大粗體標題 */
@@ -3104,10 +3104,7 @@ body.contact-page .site-footer {
         padding-bottom: 6px !important; text-transform: uppercase !important;
     }
 
-    /* ── About：HERE 縮小 ── */
-    .here-text .m-title {
-        font-size: 3.2rem !important;
-    }
+    /* ── About：HERE 標題（由後方 media block 覆寫） ── */
 
     /* ── About OUR CONCEPT：抽屜圖藏掉（上方已有全寬大圖），補回 padding ── */
     .concept-img-wrapper {
@@ -3259,5 +3256,170 @@ body.contact-page .site-footer {
         width: 100% !important;
         max-width: 100% !important;
         height: auto !important;
+    }
+}
+
+
+/* ==========================================================================
+   ABOUT — COMFORTABLE / HERE 全面重設計（手機版）
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* ── COMFORTABLE THOUGHTFUL TOUCHING ── */
+    /* 整個 section：去掉 desktop padding，讓內容自然堆疊 */
+    .touching-section {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .touching-section .row {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* 左欄（拱門圖）：全寬，自然比例，色塊隱藏 */
+    .touching-left {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .touching-arch-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+    }
+    .touching-color-block {
+        display: none !important;
+    }
+    .touching-arch-img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: cover !important;
+        transform: none !important;
+    }
+
+    /* 右欄（文字）：深色背景，全寬 */
+    .touching-right {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .touching-content-wrapper {
+        background: #EDE4DB !important;
+        padding: 0 !important;
+        padding-bottom: 0 !important;
+        flex-direction: column !important;
+        display: flex !important;
+        gap: 0 !important;
+    }
+    .touching-plant-img {
+        display: none !important;
+    }
+    .touching-content-wrapper > div {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 48px 9% 60px !important;
+        gap: 0 !important;
+    }
+
+    /* 隱藏 webp 文字圖片 */
+    .touching-content-wrapper .section-text-img,
+    .touching-content-wrapper .comfortable-title-img {
+        display: none !important;
+    }
+
+    /* COMFORTABLE 標題：Playfair Italic，深棕色 */
+    .touching-right .m-title {
+        font-family: 'Playfair Display', serif !important;
+        font-style: italic !important;
+        font-size: 1.5rem !important;
+        font-weight: 400 !important;
+        line-height: 1.35 !important;
+        color: #3A2318 !important;
+        letter-spacing: 0.02em !important;
+        margin-bottom: 24px !important;
+        order: 2 !important;
+    }
+
+    /* 內文：order 1（在標題前顯示）, 深棕色 */
+    .touching-content-wrapper .m-body {
+        font-family: 'Noto Sans TC', sans-serif !important;
+        font-size: 0.97rem !important;
+        font-weight: 400 !important;
+        color: #5C3D2A !important;
+        line-height: 2.1 !important;
+        letter-spacing: 0.06em !important;
+        order: 1 !important;
+        margin-bottom: 32px !important;
+    }
+
+
+    /* ── HERE ── */
+    .here-section {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .here-section .row {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* 右欄（沙發圖）排在前面 */
+    .here-right {
+        order: 1 !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .here-img-wrapper {
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+    }
+    .here-sofa-img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: cover !important;
+        transform: none !important;
+    }
+
+    /* 左欄（文字）排在後面，淺奶油背景 */
+    .here-left {
+        order: 2 !important;
+        width: 100% !important;
+        padding: 52px 9% 64px !important;
+        background: #F5F0EB !important;
+    }
+    .here-text {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* 隱藏 webp 文字圖片 */
+    .here-text .section-title-img,
+    .here-text .section-text-img {
+        display: none !important;
+    }
+
+    /* HERE 標題：金棕色 */
+    .here-text .m-title {
+        font-family: 'Playfair Display', serif !important;
+        font-style: italic !important;
+        font-size: 1.8rem !important;
+        font-weight: 400 !important;
+        line-height: 1.1 !important;
+        color: #9B7B5C !important;
+        letter-spacing: 0.02em !important;
+        margin-bottom: 24px !important;
+    }
+
+    /* HERE 內文 */
+    .here-text .m-body {
+        font-family: 'Noto Sans TC', sans-serif !important;
+        font-size: 0.97rem !important;
+        font-weight: 400 !important;
+        color: #5C4033 !important;
+        line-height: 2.1 !important;
+        letter-spacing: 0.06em !important;
     }
 }
