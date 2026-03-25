@@ -21,21 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initHeaderScroll() {
     const header = document.querySelector('header');
+    const nav = document.querySelector('.main-nav');
     if (!header) return;
 
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-
-        // Only hide if menu is not open
-        const nav = document.querySelector('.main-nav');
-        if (nav && nav.classList.contains('menu-open')) return;
-
-        if (scrollY > 50) {
-            header.classList.add('hidden');
-        } else {
-            header.classList.remove('hidden');
-        }
-    });
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            if (nav && nav.classList.contains('menu-open')) { ticking = false; return; }
+            if (window.scrollY > 50) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            ticking = false;
+        });
+    }, { passive: true });
 }
 
 /**
@@ -75,11 +77,10 @@ function initFadeInAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-            } else {
-                entry.target.classList.remove('is-visible');
+                observer.unobserve(entry.target); // 出現後停止觀察，不重複觸發
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
     const startObserving = () => fadeEls.forEach(el => observer.observe(el));
 
