@@ -3423,3 +3423,34 @@ body.contact-page .site-footer {
         letter-spacing: 0.06em !important;
     }
 }
+
+
+/* ==========================================================================
+   手機版背景色修正 — 移除超出範圍的 PNG 背景圖，改用純色
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* About：移除背景圖，保留暖米色 */
+    body.about-page {
+        background-image: none !important;
+        background-color: #EEE9E4 !important;
+    }
+
+    /* Services：移除背景圖，使用設計稿底色 */
+    body.services-page {
+        background-image: none !important;
+        background-color: #F0EBE7 !important;
+    }
+
+    /* Contact：移除背景圖，使用設計稿底色 */
+    body.contact-page {
+        background-image: none !important;
+        background-color: #F0EBE7 !important;
+    }
+
+    /* Projects / project-detail：使用全域暖白 */
+    body.projects-page,
+    body.project-detail-page {
+        background-color: #F9F6F2 !important;
+    }
+}
