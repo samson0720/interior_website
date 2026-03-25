@@ -3454,3 +3454,57 @@ body.contact-page .site-footer {
         background-color: #F9F6F2 !important;
     }
 }
+
+
+/* ==========================================================================
+   手機版按鈕樣式 & Projects caption 修正
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* ── SUBMIT 按鈕：加邊框，有按鈕感 ── */
+    .m-submit {
+        display: inline-block !important;
+        border: 1.5px solid rgba(92, 64, 51, 0.65) !important;
+        border-bottom: 1.5px solid rgba(92, 64, 51, 0.65) !important;
+        padding: 13px 36px !important;
+        font-family: 'Playfair Display', serif !important;
+        font-style: italic !important;
+        font-size: 0.9rem !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.22em !important;
+        text-indent: 0.22em !important;
+        text-transform: uppercase !important;
+        color: #5C4033 !important;
+        background: transparent !important;
+        margin-top: 8px !important;
+    }
+
+    /* ── Next Project 按鈕：同樣加框 ── */
+    .m-proj-nav {
+        display: inline-block !important;
+        border: 1.5px solid rgba(92, 77, 66, 0.55) !important;
+        border-bottom: 1.5px solid rgba(92, 77, 66, 0.55) !important;
+        padding: 11px 28px !important;
+        font-family: 'Playfair Display', serif !important;
+        font-style: italic !important;
+        font-size: 0.88rem !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.1em !important;
+        color: #5C4D42 !important;
+        background: transparent !important;
+    }
+
+    /* ── Projects 列表：caption 文字不溢出 ── */
+    .project-caption {
+        overflow: hidden !important;
+        max-width: 100% !important;
+    }
+    .project-caption-en {
+        font-size: 1.15rem !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+    .project-caption-line {
+        width: 28px !important;
+    }
+}
