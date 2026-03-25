@@ -2120,7 +2120,7 @@ body.contact-page .site-footer {
     }
 
     .touching-content-wrapper .section-text-img {
-        width: 100% !important;
+        width: auto !important;
         max-width: 100% !important;
         margin-left: 0 !important;
     }
@@ -2167,7 +2167,8 @@ body.contact-page .site-footer {
     .here-text .section-text-img {
         position: static !important;
         top: auto !important;
-        width: 85% !important;
+        width: auto !important;
+        max-width: 85% !important;
     }
 
     .here-right {
@@ -2313,7 +2314,7 @@ body.contact-page .site-footer {
 
     .sv-subtitle,
     .sv-desc {
-        width: 100% !important;
+        width: auto !important;
         max-width: 100% !important;
         margin-top: 10px;
     }
@@ -2333,7 +2334,8 @@ body.contact-page .site-footer {
     }
 
     .sv-contact-intro {
-        width: 100% !important;
+        width: auto !important;
+        max-width: 100% !important;
         min-width: 0 !important;
         margin: 0 auto 30px !important;
     }
@@ -2389,5 +2391,75 @@ body.contact-page .site-footer {
     body.services-page .site-footer,
     body.contact-page .site-footer {
         margin-top: 40px;
+    }
+
+    /* Projects：caption 移到圖片下方，不再疊在圖上 */
+    .project-caption {
+        position: static;
+        padding: 14px 24px;
+        color: var(--text-primary);
+    }
+    .project-caption-zh {
+        color: var(--text-primary);
+        text-shadow: none;
+    }
+    .project-caption-en {
+        font-size: 1.4rem;
+        color: var(--text-accent);
+        text-shadow: none;
+    }
+    .projects-main > * {
+        margin-bottom: 40px;
+    }
+    body.projects-page .site-footer {
+        margin-top: 40px;
+    }
+}
+
+
+/* =============================================
+   TABLET FIXES (769px – 1150px)
+   ============================================= */
+@media (min-width: 769px) and (max-width: 1150px) {
+
+    /* ── Header navbar 間距縮小，防止 logo / IG 重疊 ── */
+    .main-nav {
+        gap: 40px;
+    }
+
+    /* ── Footer navbar 間距縮小 ── */
+    .footer-nav {
+        gap: 40px;
+    }
+
+    /* ── About INTRODUCTION：right 欄 left offset 縮小，防右側被截 ── */
+    .img-eng-quote,
+    .img-zh-quote,
+    .img-director-desc {
+        left: 20px;
+    }
+
+    .director-row {
+        left: 20px;
+    }
+
+    /* ── Services 表單：4 欄 → 2 欄，防標籤重疊 ── */
+    .sv-form {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 60px;
+    }
+
+    .sv-form-field[style*="grid-column"] {
+        grid-column: span 2 !important;
+    }
+
+    /* ── Services 流程：加 overflow:hidden，防插圖溢出左側 ── */
+    .sv-process-wrap {
+        overflow: hidden;
+    }
+
+    /* ── Projects caption：仍疊在圖上，但加半透明漸層確保可讀 ── */
+    .project-photo-full {
+        overflow: hidden;
     }
 }
