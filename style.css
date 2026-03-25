@@ -1982,49 +1982,58 @@ body.contact-page .site-footer {
         flex-direction: column;
         align-items: center;
         gap: 0;
-        padding: 40px 24px 32px;
+        padding: 50px 28px 40px;
         text-align: center;
     }
 
+    /* Logo */
     .footer-left {
-        margin-bottom: 28px;
+        margin-bottom: 32px;
     }
 
     .footer-left img {
-        height: 38px;
+        height: 44px;
+        opacity: 0.92;
     }
 
+    /* Nav wrapper — 上下有細線 */
     .footer-center {
-        margin-bottom: 22px;
+        width: 75%;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        margin-bottom: 24px;
     }
 
     .footer-nav {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px 20px;
+        gap: 10px 24px;
     }
 
-    /* Footer nav：隱藏 webp 圖片，改用 CSS 文字 */
+    /* Footer nav：隱藏 webp 圖片，以 CSS ::after 注入文字 */
     .footer-nav a img {
         display: none !important;
     }
 
     .footer-nav a::after {
-        font-family: 'Playfair Display', serif;
-        font-size: 0.62rem;
-        letter-spacing: 0.22em;
-        color: rgba(255, 255, 255, 0.65);
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        color: rgba(255, 255, 255, 0.6);
         text-transform: uppercase;
     }
 
-    .footer-nav a[href="index.html"]::after   { content: "HOME"; }
-    .footer-nav a[href="about.html"]::after   { content: "ABOUT"; }
+    .footer-nav a[href="index.html"]::after    { content: "HOME"; }
+    .footer-nav a[href="about.html"]::after    { content: "ABOUT"; }
     .footer-nav a[href="projects.html"]::after { content: "PROJECTS"; }
     .footer-nav a[href="contact.html"]::after  { content: "CONTACT"; }
     .footer-nav a[href="services.html"]::after { content: "SERVICES"; }
 
+    /* Copyright */
     .footer-right {
-        margin-top: 4px;
+        margin-top: 0;
     }
 }
 
@@ -2577,6 +2586,12 @@ body.contact-page .site-footer {
 
 @media (max-width: 768px) {
 
+    /* ── Font smoothing ── */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
     /* ── 隱藏純文字圖片 ── */
     img.section-title-img,
     img.section-text-img,
@@ -2607,207 +2622,255 @@ body.contact-page .site-footer {
     .m-txt { display: block; }
     .m-txt.m-flex { display: flex; }
 
-    /* ── About：英文裝飾標題（OUR CONCEPT / HERE 等） ── */
+    /* ════════════════════════════════════
+       ABOUT 頁
+       ════════════════════════════════════ */
+
+    /* 英文裝飾小標（OUR CONCEPT / HERE 等） */
     .m-title {
         font-family: 'Playfair Display', serif;
-        font-size: 0.68rem;
-        letter-spacing: 0.32em;
-        color: #9C8776;
-        text-transform: uppercase;
-        line-height: 2;
-        margin-bottom: 6px;
+        font-style: italic;
+        font-size: 0.78rem;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        color: #B09070;
+        line-height: 1;
+        margin-bottom: 14px;
     }
 
-    /* ── About：中文段落主文 ── */
+    /* 中文段落主文 */
     .m-body {
-        font-family: 'Noto Serif TC', serif;
-        font-size: 0.88rem;
-        line-height: 2.1;
-        color: #5C4D42;
+        font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+        font-size: 0.93rem;
+        font-weight: 400;
+        line-height: 2.15;
+        color: #2C1F18;
         letter-spacing: 0.06em;
-        margin-top: 8px;
+        margin-top: 0;
     }
 
-    /* ── About：英文引言 ── */
+    /* 英文引言（THE CONCEPT AND SOUL...） */
     .m-quote-en {
         font-family: 'Playfair Display', serif;
         font-style: italic;
-        font-size: 0.72rem;
-        letter-spacing: 0.12em;
-        color: #9C8776;
-        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 400;
+        letter-spacing: 0.06em;
+        color: #8C7360;
+        line-height: 1.75;
+    }
+
+    /* 中文引言（「概念及靈魂...」） */
+    .m-quote-zh {
+        font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        color: #2C1F18;
         line-height: 1.9;
     }
 
-    /* ── About：中文引言 ── */
-    .m-quote-zh {
-        font-family: 'Noto Serif TC', serif;
-        font-size: 0.88rem;
-        letter-spacing: 0.2em;
-        color: #5C4D42;
-        line-height: 2;
-    }
-
-    /* ── About：設計總監那行 ── */
+    /* 設計總監那行 */
     .m-director-row {
-        align-items: baseline;
-        gap: 14px;
-        margin-top: 4px;
+        align-items: center;
+        gap: 0;
+        margin-top: 6px;
     }
     .m-director-label {
         font-family: 'Noto Sans TC', sans-serif;
         font-size: 0.72rem;
-        color: #7A6B5E;
-        letter-spacing: 0.12em;
+        font-weight: 400;
+        color: #9B7B5C;
+        letter-spacing: 0.14em;
+        padding-right: 14px;
+        border-right: 1px solid rgba(155, 123, 92, 0.45);
+        margin-right: 14px;
     }
     .m-director-name {
         font-family: 'Playfair Display', serif;
         font-style: italic;
-        font-size: 1.05rem;
-        color: #4A3B33;
-        letter-spacing: 0.04em;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #1E1512;
     }
 
-    /* ── About：Aria 介紹內文 ── */
+    /* Aria 介紹內文 */
     .m-director-desc {
         font-family: 'Noto Sans TC', sans-serif;
-        font-size: 0.82rem;
-        line-height: 2;
-        color: #6B5D53;
-        letter-spacing: 0.04em;
+        font-size: 0.85rem;
+        font-weight: 400;
+        line-height: 2.1;
+        color: #5C4D42;
+        letter-spacing: 0.03em;
+        margin-top: 2px;
     }
 
-    /* ── Home：Hero 主標語 ── */
+    /* ════════════════════════════════════
+       HOME 頁 Hero
+       ════════════════════════════════════ */
+
+    /* 主標語 Designed with warmth. Crafted with care. */
     .m-hero-slogan {
         font-family: 'Playfair Display', serif;
         font-style: italic;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
+        font-weight: 400;
         color: #fff;
-        line-height: 1.65;
-        text-shadow: 0 2px 14px rgba(0,0,0,0.35);
+        line-height: 1.5;
+        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
     }
 
-    /* ── Home：Hero 英文副標 ── */
+    /* 英文副標 Silky Jade Interior Design Co. Ltd. */
     .m-hero-sub {
         font-family: 'Noto Sans TC', sans-serif;
-        font-size: 0.6rem;
-        color: rgba(255,255,255,0.82);
-        letter-spacing: 0.18em;
-        margin-top: 10px;
+        font-size: 0.62rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.78);
+        letter-spacing: 0.16em;
+        margin-top: 14px;
     }
 
-    /* ── Home：Hero 中文副標 ── */
+    /* 中文副標 溫 度 設 計 ｜ 細 節 落 地 */
     .m-hero-zh {
-        font-family: 'Noto Serif TC', serif;
-        font-size: 0.6rem;
-        color: rgba(255,255,255,0.82);
-        letter-spacing: 0.28em;
+        font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+        font-size: 0.62rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.78);
+        letter-spacing: 0.26em;
         margin-top: 6px;
     }
 
-    /* ── Footer：版權文字 ── */
+    /* ════════════════════════════════════
+       FOOTER 版權
+       ════════════════════════════════════ */
     .m-copyright {
         font-family: 'Noto Sans TC', sans-serif;
-        font-size: 0.56rem;
-        letter-spacing: 0.16em;
-        color: rgba(255,255,255,0.52);
+        font-size: 0.58rem;
+        font-weight: 400;
+        letter-spacing: 0.14em;
+        color: rgba(255, 255, 255, 0.42);
         text-transform: uppercase;
-        line-height: 1.9;
+        line-height: 2;
     }
     .home-footer .m-copyright { text-align: center; }
     .site-footer .footer-right .m-copyright { text-align: center; }
 
-    /* ── Services / Contact：頁面大標題 ── */
+    /* ════════════════════════════════════
+       SERVICES 頁
+       ════════════════════════════════════ */
+
+    /* 頁面大標題 SERVICES */
     .m-page-title {
         font-family: 'Playfair Display', serif;
-        font-size: 1.55rem;
-        letter-spacing: 0.42em;
-        color: #4A3B33;
+        font-size: 1.9rem;
+        font-weight: 400;
+        letter-spacing: 0.5em;
+        text-indent: 0.5em;
+        color: #1E1512;
         text-align: center;
-        padding: 14px 0 6px;
+        padding: 8px 0 4px;
     }
 
-    /* ── Services：步驟號碼 + 名稱整行 ── */
+    /* 步驟號碼 + 名稱（flex row） */
     .m-step-head {
-        align-items: baseline;
-        gap: 16px;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(156, 133, 117, 0.22);
+        align-items: center;
+        gap: 0;
+        margin-bottom: 12px;
     }
+
+    /* 步驟號碼（大、斜體、透明感） */
     .m-step-num {
         font-family: 'Playfair Display', serif;
-        font-size: 0.72rem;
-        color: #B0957E;
-        letter-spacing: 0.06em;
+        font-style: italic;
+        font-size: 2.4rem;
+        font-weight: 400;
+        color: rgba(176, 144, 112, 0.3);
+        line-height: 1;
         flex-shrink: 0;
-    }
-    .m-step-name {
-        font-family: 'Noto Serif TC', serif;
-        font-size: 1rem;
-        letter-spacing: 0.1em;
-        color: #4A3B33;
-        font-weight: 500;
+        width: 64px;
     }
 
-    /* ── Services：步驟副標（03/04 的小標） ── */
+    /* 步驟名稱（粗體中文） */
+    .m-step-name {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: #1E1512;
+    }
+
+    /* 步驟副標（03/04 的小字） */
     .m-step-sub {
         font-family: 'Noto Sans TC', sans-serif;
-        font-size: 0.7rem;
-        color: #A08A78;
+        font-size: 0.72rem;
+        font-weight: 400;
+        color: #B09070;
         letter-spacing: 0.08em;
-        margin-top: 10px;
+        margin-top: 6px;
+        padding-left: 64px;
     }
 
-    /* ── Services：步驟說明 ── */
+    /* 步驟描述 */
     .m-step-desc {
         font-family: 'Noto Sans TC', sans-serif;
-        font-size: 0.82rem;
-        line-height: 2;
-        color: #6B5D53;
+        font-size: 0.85rem;
+        font-weight: 400;
+        line-height: 2.05;
+        color: #5C4D42;
         margin-top: 8px;
+        padding-left: 64px;
     }
 
-    /* ── Services / Contact：聯絡說明段 ── */
+    /* ════════════════════════════════════
+       SERVICES / CONTACT 表單區
+       ════════════════════════════════════ */
+
+    /* 聯絡說明段 */
     .m-contact-intro {
         font-family: 'Noto Sans TC', sans-serif;
-        font-size: 0.82rem;
-        line-height: 2.05;
-        color: #7A6B5E;
+        font-size: 0.85rem;
+        font-weight: 400;
+        line-height: 2.1;
+        color: #6B5344;
         text-align: center;
         letter-spacing: 0.04em;
-        margin-bottom: 14px;
-        padding: 0 2%;
+        margin-bottom: 16px;
+        padding: 0 4%;
     }
 
-    /* ── 表單標籤 ── */
+    /* 表單欄位標籤 */
     .m-label {
         font-family: 'Noto Sans TC', sans-serif;
-        font-size: 0.75rem;
-        color: #7A6B5E;
+        font-size: 0.78rem;
+        font-weight: 400;
+        color: #6B5344;
         letter-spacing: 0.06em;
     }
 
-    /* ── INFORMATION 標題 ── */
+    /* INFORMATION 大標題 */
     .m-section-en {
         font-family: 'Playfair Display', serif;
-        font-size: 0.95rem;
-        letter-spacing: 0.38em;
-        color: #9C8776;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.42em;
+        text-indent: 0.42em;
+        color: #9B7B5C;
         text-transform: uppercase;
         display: block;
         text-align: center;
-        margin-bottom: 6px;
+        margin-bottom: 4px;
     }
 
-    /* ── SUBMIT 按鈕文字 ── */
+    /* SUBMIT 按鈕 */
     .m-submit {
         font-family: 'Playfair Display', serif;
-        font-size: 0.72rem;
-        letter-spacing: 0.4em;
-        color: #6B5D53;
-        border-bottom: 1px solid rgba(107, 93, 83, 0.4);
-        padding-bottom: 4px;
+        font-size: 0.8rem;
+        font-weight: 400;
+        letter-spacing: 0.45em;
+        text-indent: 0.45em;
+        color: #4A3528;
+        border-bottom: 1px solid rgba(74, 53, 40, 0.3);
+        padding-bottom: 5px;
         text-transform: uppercase;
     }
 }
