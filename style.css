@@ -3104,9 +3104,25 @@ body.contact-page .site-footer {
         padding-bottom: 6px !important; text-transform: uppercase !important;
     }
 
-    /* ── About：HERE 稍微縮小避免過於破壞性 ── */
+    /* ── About：HERE 縮小 ── */
     .here-text .m-title {
         font-size: 3.2rem !important;
+    }
+
+    /* ── About OUR CONCEPT：抽屜圖藏掉（上方已有全寬大圖），補回 padding ── */
+    .concept-img-wrapper {
+        display: none !important;
+    }
+    .concept-text {
+        padding-top: 48px !important;
+    }
+
+    /* ── About 各 section 底部 / HERE 頂部：縮小超大空白 ── */
+    .touching-content-wrapper {
+        padding-bottom: 52px !important;
+    }
+    .here-left {
+        padding-top: 52px !important;
     }
 }
 
