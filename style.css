@@ -2901,3 +2901,206 @@ body.contact-page .site-footer {
         text-transform: uppercase;
     }
 }
+
+
+/* ==========================================================================
+   MOBILE COMPLETE REDESIGN — About / Services / Contact
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* ── About Section 1: OUR CONCEPT ── */
+    .concept-section { padding: 0 !important; }
+    .concept-section .row { flex-direction: column !important; gap: 0 !important; }
+    .concept-right { order: 1; width: 100% !important; margin: 0 !important; }
+    .concept-table-img {
+        width: 100% !important; height: 65vw !important;
+        object-fit: cover !important; object-position: center !important; display: block;
+    }
+    .concept-left { order: 2; width: 100% !important; padding: 0 !important; }
+    .concept-img-wrapper { width: 38% !important; height: auto !important; margin: 52px 0 0 8% !important; }
+    .concept-text { position: static !important; left: auto !important; top: auto !important; padding: 20px 8% 72px !important; }
+
+    /* ── About Section 2: COMFORTABLE ── */
+    .touching-section { padding: 0 !important; }
+    .touching-section .row { flex-direction: column !important; gap: 0 !important; }
+    .touching-left { order: 1; width: 100% !important; }
+    .touching-arch-img {
+        width: 100% !important; height: 74vw !important;
+        object-fit: cover !important; object-position: center top !important; display: block;
+    }
+    .touching-right { order: 2; width: 100% !important; margin: 0 !important; }
+    .touching-content-wrapper {
+        width: 100% !important; margin: 0 !important; padding: 48px 8% 72px !important;
+        display: flex !important; flex-direction: column !important;
+    }
+    .touching-plant-img { width: 30% !important; margin: 0 0 28px auto !important; height: auto !important; }
+
+    /* ── About Section 3: HERE ── */
+    .here-section { padding: 0 !important; }
+    .here-section .row { flex-direction: column !important; gap: 0 !important; }
+    .here-left { order: 1; width: 100% !important; padding: 80px 8% 52px !important; }
+    .here-text { position: static !important; left: auto !important; top: auto !important; margin: 0 !important; }
+    .here-title-img { display: none !important; }
+    .here-right { order: 2; width: 100% !important; margin: 0 !important; }
+    .here-sofa-img {
+        width: 100% !important; height: 70vw !important;
+        object-fit: cover !important; object-position: center !important; display: block; top: 0 !important;
+    }
+
+    /* ── About Section 4: INTRODUCTION ── */
+    .section-intro {
+        display: flex !important; flex-direction: column !important;
+        position: static !important; margin: 0 !important; overflow: hidden;
+    }
+    .intro-bg-img {
+        position: static !important; width: 100% !important; height: 72vw !important;
+        object-fit: cover !important; object-position: center 20% !important; display: block;
+    }
+    .intro-left-overlay { display: none !important; }
+    .intro-right {
+        position: static !important; width: 100% !important; height: auto !important;
+        background: #EDE6DF !important; padding: 56px 8% 72px !important;
+        display: flex !important; flex-direction: column !important;
+        gap: 0 !important; justify-content: flex-start !important;
+    }
+    .director-row { position: static !important; left: auto !important; top: auto !important; margin: 28px 0 0 !important; gap: 0 !important; }
+    .img-director-desc { position: static !important; width: 100% !important; max-width: 100% !important; transform: none !important; left: auto !important; top: auto !important; }
+
+    /* ── About Typography ── */
+
+    /* OUR CONCEPT: 小斜體標籤 */
+    .concept-text .m-title {
+        font-family: 'Playfair Display', serif;
+        font-style: italic; font-size: 0.72rem; font-weight: 400;
+        letter-spacing: 0.28em; color: #9B7B5C;
+        line-height: 1; margin-bottom: 22px; text-transform: uppercase;
+    }
+
+    /* COMFORTABLE THOUGHTFUL TOUCHING: 大粗體標題 */
+    .touching-right .m-title {
+        font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+        font-style: normal; font-size: 1.5rem; font-weight: 600;
+        letter-spacing: 0.04em; color: #1A1210; line-height: 1.8; margin-top: 28px;
+    }
+
+    /* HERE: 超大斜體戲劇標題 */
+    .here-text .m-title {
+        font-family: 'Playfair Display', serif;
+        font-style: italic; font-size: 3.8rem; font-weight: 400;
+        letter-spacing: 0.08em; color: #1A1210; line-height: 1; margin-bottom: 36px;
+    }
+
+    /* 中文主文 */
+    .m-body {
+        font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+        font-size: 0.95rem; font-weight: 400; line-height: 2.2;
+        color: #2C1F18; letter-spacing: 0.05em; margin-top: 0;
+    }
+
+    /* 英文引言 */
+    .m-quote-en {
+        font-family: 'Playfair Display', serif;
+        font-style: italic; font-size: 1rem; font-weight: 400;
+        letter-spacing: 0.05em; color: #7A6352; line-height: 1.78; margin-bottom: 20px;
+    }
+
+    /* 中文引言 */
+    .m-quote-zh {
+        font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+        font-size: 1.05rem; font-weight: 500; letter-spacing: 0.18em;
+        color: #1A1210; line-height: 1.9; margin-bottom: 36px;
+    }
+
+    /* 設計總監 */
+    .m-director-label {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 0.72rem; font-weight: 400; color: #9B7B5C;
+        letter-spacing: 0.18em; padding-right: 16px;
+        border-right: 1px solid rgba(155, 123, 92, 0.4); margin-right: 16px;
+    }
+    .m-director-name {
+        font-family: 'Playfair Display', serif;
+        font-style: italic; font-size: 1.4rem; font-weight: 400; color: #1A1210;
+    }
+    .m-director-desc {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 0.88rem; font-weight: 400; line-height: 2.15; color: #5C4D42; margin-top: 28px;
+    }
+
+    /* ── Services Steps ── */
+    .sv-process-wrap { padding: 0 0 60px !important; }
+    .sv-side--steps { padding: 0 8% !important; gap: 0 !important; }
+
+    .sv-step {
+        padding: 36px 0 48px !important;
+        border-top: 1px solid rgba(155, 123, 92, 0.18) !important;
+        border-bottom: none !important;
+    }
+    .sv-step:last-child { border-bottom: 1px solid rgba(155, 123, 92, 0.18) !important; }
+
+    .m-step-head {
+        flex-direction: column !important; align-items: flex-start !important;
+        gap: 0 !important; margin-bottom: 14px !important;
+        padding: 0 !important; border-bottom: none !important;
+    }
+
+    /* 號碼: 超大透明裝飾 */
+    .m-step-num {
+        font-family: 'Playfair Display', serif !important;
+        font-style: italic !important; font-size: 4.5rem !important;
+        font-weight: 400 !important; color: rgba(176, 144, 112, 0.15) !important;
+        line-height: 1 !important; width: auto !important; display: block !important;
+        margin-bottom: -8px !important; letter-spacing: -0.02em !important;
+    }
+
+    /* 名稱: 粗體黑 */
+    .m-step-name {
+        font-family: 'Noto Sans TC', sans-serif !important;
+        font-size: 1.15rem !important; font-weight: 700 !important;
+        letter-spacing: 0.04em !important; color: #1A1210 !important;
+    }
+
+    .m-step-sub {
+        font-family: 'Noto Sans TC', sans-serif !important;
+        font-size: 0.72rem !important; font-weight: 400 !important;
+        color: #B09070 !important; padding-left: 0 !important;
+        margin-top: 12px !important; letter-spacing: 0.08em !important;
+    }
+
+    .m-step-desc {
+        font-family: 'Noto Sans TC', sans-serif !important;
+        font-size: 0.88rem !important; font-weight: 400 !important;
+        line-height: 2.1 !important; color: #5C4D42 !important;
+        padding-left: 0 !important; margin-top: 10px !important;
+    }
+
+    /* SERVICES 大標題 */
+    .m-page-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 2.2rem !important; font-weight: 400 !important;
+        letter-spacing: 0.5em !important; text-indent: 0.5em !important;
+        color: #1A1210 !important; padding: 24px 0 12px !important;
+    }
+
+    /* ── Contact & Services Form ── */
+    .m-contact-intro { font-size: 0.88rem !important; line-height: 2.15 !important; color: #5C4D42 !important; padding: 0 6% !important; }
+    .m-label { font-size: 0.8rem !important; color: #7A6352 !important; letter-spacing: 0.08em !important; }
+
+    /* INFORMATION 大斜體 */
+    .m-section-en {
+        font-family: 'Playfair Display', serif !important;
+        font-style: italic !important; font-size: 1.65rem !important;
+        font-weight: 400 !important; letter-spacing: 0.08em !important;
+        text-indent: 0.08em !important; color: #5C4D42 !important;
+        text-transform: none !important; margin-bottom: 14px !important;
+    }
+
+    /* SUBMIT */
+    .m-submit {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 0.88rem !important; font-weight: 400 !important;
+        letter-spacing: 0.45em !important; text-indent: 0.45em !important;
+        color: #1A1210 !important; border-bottom: 1px solid rgba(26, 18, 16, 0.28) !important;
+        padding-bottom: 6px !important; text-transform: uppercase !important;
+    }
+}
