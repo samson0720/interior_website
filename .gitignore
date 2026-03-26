@@ -4,6 +4,12 @@ package.json
 package-lock.json
 convert-images.js
 
+# 原始未壓縮的 CSS/JS（使用 .min 版本）
+style.css
+main.js
+script.js
+temp_map_script.js
+
 # 設計稿大檔（不需要上傳 GitHub）
 PROJECTS/PNG/
 PROJECTS/*.pdf
