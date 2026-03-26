@@ -1,0 +1,21 @@
+# 開發工具
+node_modules/
+package.json
+package-lock.json
+convert-images.js
+
+# 設計稿大檔（不需要上傳 GitHub）
+PROJECTS/PNG/
+PROJECTS/*.pdf
+PROJECTS/PROJECTS.pdf
+
+# 原始 PNG（已全部轉換為 webp，不需重複上傳）
+**/*.png
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# 其他
+.claude/
+screenshot-to-code/
